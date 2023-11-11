@@ -8,7 +8,7 @@ public class AgentMover : MonoBehaviour {
 	[SerializeField] private float maxSpeed = 5;
 	[SerializeField] private float minSpeed = 2;
 	[SerializeField] private float accelaration = 50;
-	[SerializeField] private float deacceraltion = 100;
+	[SerializeField] private float deaccelaration = 100;
 
 
 	private float currentSpeed = 0;
@@ -42,7 +42,6 @@ public class AgentMover : MonoBehaviour {
 			currentSpeed = Mathf.Clamp(currentSpeed, 0, minSpeed);
 		}
 		rb2d.velocity = oldMovementInput * currentSpeed;
-
 	}
 
 	private void IncreaseSpeed(float speed) {
