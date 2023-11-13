@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2240786374401196877}
   - component: {fileID: 8029011385686023522}
   - component: {fileID: 890115050393541185}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
-  minSpeed: 0.1
+  minSpeed: 5
   accelaration: 50
   deaccelaration: 100
 --- !u!61 &890115050393541185
