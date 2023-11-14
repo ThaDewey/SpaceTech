@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private UIDocument doc;
+
+    private Button btn_startGame;
+
+    public void Start()
     {
-        
+        var rootElement = doc.rootVisualElement;
+
+        btn_startGame = rootElement.Q<Button>("btn_startGame");
+        btn_startGame.clicked += OnButtonClicked;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        btn_startGame.clickable.clicked -= OnButtonClicked;
     }
+
+    private void OnButtonClicked()
+    {
+        Debug.Log("OnButtonClicked()");
+    }
+
 }

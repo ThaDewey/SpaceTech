@@ -1,3 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1;" />
+    <ui:VisualElement name="MenuHolder" style="flex-grow: 1; width: 400px; height: 400px; justify-content: center; align-self: center;">
+        <ui:Button text="Start Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btn_startGame" />
+    </ui:VisualElement>
 </ui:UXML>
