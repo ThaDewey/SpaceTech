@@ -3,7 +3,14 @@ guid: f76fce1ac830a70439d98e4fd629d00b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - movement: {fileID: -7493203183530243964, guid: 3cd92ac50f800e14e965edb5d3d3084f,
+      type: 3}
+  - interact: {fileID: -973737001498949765, guid: 3cd92ac50f800e14e965edb5d3d3084f,
+      type: 3}
+  - pointerPosition: {fileID: -3891107677768430183, guid: 3cd92ac50f800e14e965edb5d3d3084f,
+      type: 3}
+  - run: {fileID: 8523609042670111456, guid: 3cd92ac50f800e14e965edb5d3d3084f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

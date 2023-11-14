@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/WallStud/Inventory/UI/DefaultUI.uss?fileID=7433441132597879392&amp;guid=28b1208f8bcece041889e690eabd2ba1&amp;type=3#DefaultUI" />
+    <ui:VisualElement name="Inventory" class="glass-panel">
+        <ui:VisualElement name="InventoryContent">
+            <ui:ScrollView name="ScrollView" class="scroll-view">
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+                <ui:VisualElement name="inventoryItem" class="item" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="InventoryDescription" />
+    </ui:VisualElement>
+</ui:UXML>
