@@ -962,6 +962,7 @@ GameObject:
   - component: {fileID: 816184596449150193}
   - component: {fileID: 7049172098400377998}
   - component: {fileID: 7049172098400377999}
+  - component: {fileID: 7049172098400378000}
   m_Layer: 23
   m_Name: Prototype_Chest_200
   m_TagString: Untagged
@@ -1308,6 +1309,23 @@ MonoBehaviour:
         m_CallState: 2
   _isInteractable: 0
   _isInteracting: 0
+--- !u!114 &7049172098400378000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400832264759909282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9733703253adb0d4cb213fa5a7301d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max: 0
+  slots: 0
+  contents: []
+  isOpen: 0
+  isLocked: 0
 --- !u!4 &7762914072068600451
 Transform:
   m_ObjectHideFlags: 0
