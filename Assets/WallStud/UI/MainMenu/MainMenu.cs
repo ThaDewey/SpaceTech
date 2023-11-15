@@ -9,6 +9,12 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private MenuProperties menuProperties;
     [SerializeField] private VisualElement root;
 
+
+	[SerializeField] private StringEventChannelSO _channel = default;
+
+	public StringEvent OnEventRaised;
+
+
 	public void Start() {
 
         doc = GetComponent<UIDocument>();
@@ -30,6 +36,24 @@ public class MainMenu : MonoBehaviour
 	}
 
 
+
+	private void OnEnable() {
+		if (_channel != null)
+			_channel.OnEventRaised += Respond;
+	}
+
+	private void OnDisable() {
+		if (_channel != null)
+			_channel.OnEventRaised -= Respond;
+	}
+
+	private void Respond(string value) {
+		if (OnEventRaised != null) OnEventRaised.Invoke(value);
+	}
+
+	public void Test(string s) {
+		Debug.Log(s);
+	}
 
 
 

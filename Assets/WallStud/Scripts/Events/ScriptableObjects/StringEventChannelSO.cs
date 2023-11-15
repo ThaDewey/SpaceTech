@@ -10,13 +10,11 @@ using UnityEngine.Events;
 public class StringEventChannelSO : DescriptionBaseSO
 {
 	public UnityAction<string> OnEventRaised;
-	public UnityEvent<string> TestRasied;
 
 	
 	public void RaiseEvent(string value)
 	{
-		Debug.Log($"RaiseEvent({value})");
+		//Debug.Log($"RaiseEvent({value})");
 		if (OnEventRaised != null) OnEventRaised.Invoke(value);
-		//if (TestRasied != null) TestRasied.Invoke(value);
 	}
 }
