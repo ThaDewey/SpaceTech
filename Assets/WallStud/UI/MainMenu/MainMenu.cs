@@ -7,23 +7,31 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private UIDocument doc;
     [SerializeField] private MenuProperties menuProperties;
+    [SerializeField] private VisualElement root;
 
-    private Button btn_startGame;
+	public void Start() {
 
-    public void Start(){
-        var rootElement = doc.rootVisualElement;
+        doc = GetComponent<UIDocument>();
+        root = doc.rootVisualElement;
+        var menu = root.Q<VisualElement>("MenuHolder");
+        Debug.Log(menu);
+        Debug.Log(menuProperties.buttons.Count);
 
-        btn_startGame = rootElement.GetButton("btn_startGame");
-        btn_startGame.clicked += OnButtonClicked;
-    }
+        foreach ( MenuButtonProperties button in menuProperties.buttons) {
+        Button  btn = new Button();
+            btn.name = button.uxmlName;
+            btn.text = button.displayName;
+            btn.clicked += button.OnClick.Invoke;
 
-    private void OnDestroy(){
-        btn_startGame.clickable.clicked -= OnButtonClicked;
-    }
+			menu.Add(btn);
 
-    private void OnButtonClicked()
-    {
-        Debug.Log("OnButtonClicked()");
-    }
+        }
+
+	}
+
+
+
+
+
 
 }

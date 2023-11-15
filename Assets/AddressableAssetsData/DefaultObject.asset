@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82df99cd4c7564d4ca44d50a1dce516b, type: 3}
-  m_Name: Start Screen
+  m_Script: {fileID: 11500000, guid: 3a189bb168d8d90478a09ea08c2f3d72, type: 3}
+  m_Name: DefaultObject
   m_EditorClassIdentifier: 
-  _guid: 8ebfc71cf11d0ed48b2207c447690115
-  description: Raised by the EditorInitializer Prefab to notify the SceneLoader that
-    the user has pressed Play in the editor from a Location scene.
+  m_AddressableAssetSettingsGuid: b222520f44fe2e44b90e4077e05e2f25
