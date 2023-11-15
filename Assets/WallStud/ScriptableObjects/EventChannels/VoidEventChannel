@@ -1,0 +1,15 @@
+using System.Collections.Generic;
+using UnityEngine;
+[CreateAssetMenu(fileName = "Void Event", menuName = "WallStud/SO/Channels/Void Event Channel")]
+
+public class VoidEventChannel: ScriptableObject
+{
+
+public unityAction OnEventRaised;
+
+public void RaiseEvent(){
+
+    OnEventRaised.Invoke();
+}
+
+}
