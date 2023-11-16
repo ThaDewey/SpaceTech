@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
-using UnityEngine.AddressableAssets;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This class is a base class which contains what is common to all game scenes (Locations, Menus, Managers)
 /// </summary>
+[CreateAssetMenu(menuName = "Scenes/ Game Scene ")]
 public class GameSceneSO : DescriptionBaseSO
 {
-	public GameSceneType sceneType;
-	public AssetReference sceneReference; //Used at runtime to load the scene from the right AssetBundle
+	//public GameSceneType sceneType;
+	//public AssetReference sceneReference; //Used at runtime to load the scene from the right AssetBundle
+	public Scene scene;
 	public AudioCueSO musicTrack;
+	public string sceneName;
+	public int sceneIndex;
 
+	/*
 	/// <summary>
 	/// Used by the SceneSelector tool to discern what type of scene it needs to load
 	/// </summary>
@@ -27,4 +32,5 @@ public class GameSceneSO : DescriptionBaseSO
 		//Work in progress scenes that don't need to be played
 		Art,
 	}
+	*/
 }

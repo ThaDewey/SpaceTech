@@ -59,6 +59,7 @@ public class SceneLoader : MonoBehaviour
 	/// </summary>
 	private void LocationColdStartup(GameSceneSO currentlyOpenedLocation, bool showLoadingScreen, bool fadeScreen)
 	{
+		/*
 		_currentlyLoadedScene = currentlyOpenedLocation;
 
 		if (_currentlyLoadedScene.sceneType == GameSceneSO.GameSceneType.Location)
@@ -70,6 +71,7 @@ public class SceneLoader : MonoBehaviour
 
 			StartGameplay();
 		}
+		*/
 	}
 #endif
 
@@ -78,6 +80,7 @@ public class SceneLoader : MonoBehaviour
 	/// </summary>
 	private void LoadLocation(GameSceneSO locationToLoad, bool showLoadingScreen, bool fadeScreen)
 	{
+		/*
 		//Prevent a double-loading, for situations where the player falls in two Exit colliders in one frame
 		if (_isLoading)
 			return;
@@ -97,6 +100,7 @@ public class SceneLoader : MonoBehaviour
 		{
 			StartCoroutine(UnloadPreviousScene());
 		}
+		*/
 	}
 
 	private void OnGameplayManagersLoaded(AsyncOperationHandle<SceneInstance> obj)
@@ -137,14 +141,16 @@ public class SceneLoader : MonoBehaviour
 
 		yield return new WaitForSeconds(_fadeDuration);
 
-		if (_currentlyLoadedScene != null) //would be null if the game was started in Initialisation
-		{
-			if (_currentlyLoadedScene.sceneReference.OperationHandle.IsValid())
-			{
+		if (_currentlyLoadedScene != null){ //would be null if the game was started in Initialisation
+		
+			/*
+			if (_currentlyLoadedScene.sceneReference.OperationHandle.IsValid()){
 				//Unload the scene through its AssetReference, i.e. through the Addressable system
 				_currentlyLoadedScene.sceneReference.UnLoadScene();
 			}
+			*/
 #if UNITY_EDITOR
+/*
 			else
 			{
 				//Only used when, after a "cold start", the player moves to a new scene
@@ -152,6 +158,7 @@ public class SceneLoader : MonoBehaviour
 				//the scene needs to be unloaded using regular SceneManager instead of as an Addressable
 				SceneManager.UnloadSceneAsync(_currentlyLoadedScene.sceneReference.editorAsset.name);
 			}
+			*/
 #endif
 		}
 
@@ -163,6 +170,7 @@ public class SceneLoader : MonoBehaviour
 	/// </summary>
 	private void LoadNewScene()
 	{
+		/*
 		if (_showLoadingScreen)
 		{
 			_toggleLoadingScreen.RaiseEvent(true);
@@ -170,6 +178,7 @@ public class SceneLoader : MonoBehaviour
 
 		_loadingOperationHandle = _sceneToLoad.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true, 0);
 		_loadingOperationHandle.Completed += OnNewSceneLoaded;
+		*/
 	}
 
 	private void OnNewSceneLoaded(AsyncOperationHandle<SceneInstance> obj)

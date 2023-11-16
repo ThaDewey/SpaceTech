@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using SceneSelectorInternal;
 using UnityEditor.SceneManagement;
-using SceneType = GameSceneSO.GameSceneType;
+//using SceneType = GameSceneSO.GameSceneType;
 
 public partial class SceneSelector : EditorWindow, IHasCustomMenu
 {

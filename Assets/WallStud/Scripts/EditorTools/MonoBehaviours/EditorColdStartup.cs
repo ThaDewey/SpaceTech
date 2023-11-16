@@ -20,7 +20,7 @@ public class EditorColdStartup : MonoBehaviour
 	private bool isColdStart = false;
 	private void Awake()
 	{
-		if (!SceneManager.GetSceneByName(_persistentManagersSO.sceneReference.editorAsset.name).isLoaded)
+		if (!SceneManager.GetSceneByName(_persistentManagersSO.sceneName).isLoaded)
 		{
 			isColdStart = true;
 
@@ -34,7 +34,7 @@ public class EditorColdStartup : MonoBehaviour
 	{
 		if (isColdStart)
 		{
-			_persistentManagersSO.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true).Completed += LoadEventChannel;
+		//	SceneManager.LoadSceneAsync(_persistentManagersSO.sceneIndex, LoadSceneMode.Additive).Completed += LoadEventChannel;
 
 		}
 		CreateSaveFileIfNotPresent();

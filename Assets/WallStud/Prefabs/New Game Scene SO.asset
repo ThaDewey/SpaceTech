@@ -9,8 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ee99915727766d47bf95fb4d4aae90a, type: 3}
-  m_Name: FadeEventChannel
+  m_Script: {fileID: 11500000, guid: 07a92b7477be8164091bdd3d81cec587, type: 3}
+  m_Name: New Game Scene SO
   m_EditorClassIdentifier: 
-  _guid: b40bb60f3ca40164e9d7acc6992bae10
+  _guid: 2e52cbd8c28dbd14da7db6678902943e
   description: 
+  sceneType: 5
+  sceneReference:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  musicTrack: {fileID: 0}
