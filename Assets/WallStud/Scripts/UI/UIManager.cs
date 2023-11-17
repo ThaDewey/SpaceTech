@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private InteractionUIEventChannelSO _setInteractionEvent = default;
 
 	[Header("Broadcasting on ")]
-	[SerializeField] private LoadEventChannelSO _loadMenuEvent = default;
+	[SerializeField] private LoadSceneEventChannelSO _loadMenuEvent = default;
 	[SerializeField] private VoidEventChannelSO _onInteractionEndedEvent = default;
 
 	bool isForCooking = false;
@@ -181,7 +181,7 @@ public class UIManager : MonoBehaviour
 		if (confirm)
 		{
 			CloseUIPause();//close ui pause to unsub from all events 
-			_loadMenuEvent.RaiseEvent(_mainMenu, false); //load main menu
+			_loadMenuEvent.RaiseEvent(_mainMenu); //load main menu
 		}
 	}
 	

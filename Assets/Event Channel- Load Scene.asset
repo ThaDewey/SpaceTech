@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82df99cd4c7564d4ca44d50a1dce516b, type: 3}
-  m_Name: New Load Event Channel SO
+  m_Script: {fileID: 11500000, guid: ea7d11492009c7140a277d3314424e14, type: 3}
+  m_Name: Event Channel- Load Scene
   m_EditorClassIdentifier: 
   _guid: 
   description: 

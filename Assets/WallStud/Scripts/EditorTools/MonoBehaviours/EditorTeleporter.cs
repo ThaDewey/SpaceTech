@@ -8,7 +8,7 @@ public class EditorTeleporter : MonoBehaviour
 	[SerializeField] private PathStorageSO _path;
 
 	[Header("Broadcast on")]
-	[SerializeField] private LoadEventChannelSO _loadLocationRequest;
+	[SerializeField] private LoadSceneEventChannelSO _loadLocationRequest;
 
 	private LocationSO _lastLocationTeleportedTo = default;
 

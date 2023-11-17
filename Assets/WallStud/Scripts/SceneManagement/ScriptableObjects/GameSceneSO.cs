@@ -13,6 +13,17 @@ public class GameSceneSO : DescriptionBaseSO
 	public AudioCueSO musicTrack;
 	public string sceneName;
 	public int sceneIndex;
+	public bool showLoadingScreen = false;
+	public bool fadeScreen = false;
+	public LoadSceneMode loadSceneMode;
+
+public void LoadScene(){
+
+SceneManager.LoadScene(sceneName,loadSceneMode);
+
+}
+
+
 
 	/*
 	/// <summary>

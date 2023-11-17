@@ -10,14 +10,14 @@ public class LocationExit : MonoBehaviour
 	[SerializeField] private PathStorageSO _pathStorage = default; //This is where the last path taken will be stored
 
 	[Header("Broadcasting on")]
-	[SerializeField] private LoadEventChannelSO _locationExitLoadChannel = default;
+	[SerializeField] private LoadSceneEventChannelSO _locationExitLoadChannel = default;
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Player"))
 		{
 			_pathStorage.lastPathTaken = _leadsToPath;
-			_locationExitLoadChannel.RaiseEvent(_locationToLoad, false, true);
+			_locationExitLoadChannel.RaiseEvent(_locationToLoad);
 		}
 	}
 }

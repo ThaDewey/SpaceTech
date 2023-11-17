@@ -7,7 +7,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 public class SaveSystem : ScriptableObject
 {
 	[SerializeField] private VoidEventChannelSO _saveSettingsEvent = default;
-	[SerializeField] private LoadEventChannelSO _loadLocation = default;
+	[SerializeField] private LoadSceneEventChannelSO _loadLocation = default;
 	[SerializeField] private InventorySO _playerInventory = default;
 	[SerializeField] private SettingsSO _currentSettings = default;
 	[SerializeField] private QuestManagerSO _questManagerSO = default;
@@ -28,7 +28,7 @@ public class SaveSystem : ScriptableObject
 		_loadLocation.OnLoadingRequested -= CacheLoadLocations;
 	}
 
-	private void CacheLoadLocations(GameSceneSO locationToLoad, bool showLoadingScreen, bool fadeScreen)
+	private void CacheLoadLocations(GameSceneSO locationToLoad)
 	{
 		LocationSO locationSO = locationToLoad as LocationSO;
 		if (locationSO)
