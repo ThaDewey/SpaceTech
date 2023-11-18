@@ -14,6 +14,3 @@ public class ItemData : ScriptableObject {
 	public ItemType itemType;
 
 }
-
-public class ItemType {
-}

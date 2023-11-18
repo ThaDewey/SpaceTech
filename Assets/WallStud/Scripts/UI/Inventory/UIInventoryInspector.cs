@@ -7,10 +7,10 @@ public class UIInventoryInspector : MonoBehaviour
 
 	public void FillInspector(ItemSO itemToInspect, bool[] availabilityArray = null)
 	{
-		bool isForCooking = (itemToInspect.ItemType.ActionType == ItemInventoryActionType.Cook);
+	//	bool isForCooking = (itemToInspect.ItemType.ActionType == ItemInventoryActionType.Cook);
 
 		_inspectorDescription.FillDescription(itemToInspect);
-
+		/*
 		if (isForCooking && availabilityArray!= null)
 		{
 			_recipeIngredients.FillIngredients(itemToInspect.IngredientsList, availabilityArray);
@@ -18,5 +18,6 @@ public class UIInventoryInspector : MonoBehaviour
 		}
 		else
 			_recipeIngredients.gameObject.SetActive(false);
+		*/
 	}
 }

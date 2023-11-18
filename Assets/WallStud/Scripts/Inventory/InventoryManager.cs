@@ -87,9 +87,10 @@ public class InventoryManager : MonoBehaviour
 			if (_currentInventory.hasIngredients(ingredients))
 			{
 				for (int i = 0; i < ingredients.Count; i++)
-				{
+				{/*
 					if ((ingredients[i].Item.ItemType.ActionType == ItemInventoryActionType.Use))
 						_currentInventory.Remove(ingredients[i].Item, ingredients[i].Amount);
+					*/
 				}
 				_currentInventory.Add(recipe.ResultingDish);
 			}

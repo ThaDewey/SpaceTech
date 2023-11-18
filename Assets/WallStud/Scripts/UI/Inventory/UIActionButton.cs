@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Localization.Components;
 using UnityEngine.Events;
 
 public class UIActionButton : MonoBehaviour
 {
-	[SerializeField] private LocalizeStringEvent _buttonActionText = default;
+	//[SerializeField] private LocalizeStringEvent _buttonActionText = default;
 	[SerializeField] private Button _buttonAction = default;
 	[SerializeField] private UIButtonPrompt _buttonPromptSetter = default;
 	[SerializeField] private InputReader _inputReader = default;
@@ -14,10 +13,10 @@ public class UIActionButton : MonoBehaviour
 
 	bool _hasEvent = false;
 
-	public void FillInventoryButton(ItemTypeSO itemType, bool isInteractable = true)
+	public void FillInventoryButton(ItemType itemType, bool isInteractable = true)
 	{
 		_buttonAction.interactable = isInteractable;
-		_buttonActionText.StringReference = itemType.ActionName;
+		//_buttonActionText.StringReference = "";
 
 		bool isKeyboard = true;
 		_buttonPromptSetter.SetButtonPrompt(isKeyboard);

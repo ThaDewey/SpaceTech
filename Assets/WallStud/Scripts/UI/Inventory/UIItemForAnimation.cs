@@ -23,7 +23,7 @@ public class UIItemForAnimation : MonoBehaviour
 			_bgLocalizedImage.enabled = false;
 			_itemPreviewImage.sprite = item.PreviewImage;
 		}
-		_bgImage.color = item.ItemType.TypeColor;
+		//_bgImage.color = item.ItemType.TypeColor;
 	}
 
 	public void OnAnimationEnded()

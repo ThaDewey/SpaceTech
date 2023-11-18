@@ -50,7 +50,7 @@ public class UIInventoryItem : MonoBehaviour
 			_itemPreviewImage.sprite = itemStack.Item.PreviewImage;
 		}
 		_itemCount.text = itemStack.Amount.ToString();
-		_bgImage.color = itemStack.Item.ItemType.TypeColor;
+		//_bgImage.color = itemStack.Item.ItemType.TypeColor;
 	}
 
 	public void SetInactiveItem()

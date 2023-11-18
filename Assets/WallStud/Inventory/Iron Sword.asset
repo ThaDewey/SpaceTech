@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdebd27bd8b96824e986acc0dc0d3d88, type: 3}
-  m_Name: item 2
+  m_Script: {fileID: 11500000, guid: ecca3721ab28dad4ab5b8c41eead3ac5, type: 3}
+  m_Name: Iron Sword
   m_EditorClassIdentifier: 
-  itemName: item 2
   itemId: 0
+  itemType: {fileID: 11400000, guid: 04a774b70e8e1154caff540c90327ab0, type: 2}
+  amount: 1
+  icon: {fileID: 21300000, guid: a730da04786758a4ea73b43f84f02535, type: 3}

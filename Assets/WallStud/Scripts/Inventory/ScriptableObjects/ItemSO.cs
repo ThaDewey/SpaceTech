@@ -25,7 +25,7 @@ public class ItemSO : SerializableScriptableObject
 
 	[Tooltip("The type of item")]
 	[SerializeField]
-	private ItemTypeSO _itemType = default;
+	private ItemType _itemType = default;
 
 	[Tooltip("A prefab reference for the model of the item")]
 	[SerializeField]
@@ -36,7 +36,7 @@ public class ItemSO : SerializableScriptableObject
 	public Sprite PreviewImage => _previewImage;
 	public LocalizedString Description => _description;
 	public int HealthResorationValue => _healthResorationValue;
-	public ItemTypeSO ItemType => _itemType;
+	public ItemType ItemType => _itemType;
 	public GameObject Prefab => _prefab;
 	public virtual List<ItemStack> IngredientsList { get; }
 	public virtual ItemSO ResultingDish { get; }

@@ -105,7 +105,8 @@ public class UIInventory : MonoBehaviour
 		{
 			SetTabs(_tabTypesList, _selectedTab);
 			List<ItemStack> listItemsToShow = new List<ItemStack>();
-			listItemsToShow = _currentInventory.Items.FindAll(o => o.Item.ItemType.TabType == _selectedTab);
+			
+			//listItemsToShow = _currentInventory.Items.FindAll(o => o.Item.ItemType.TabType == _selectedTab);
 
 			FillInvetoryItems(listItemsToShow);
 		}
@@ -222,6 +223,7 @@ public class UIInventory : MonoBehaviour
 			bool isInteractable = true;
 			_actionButton.gameObject.SetActive(true);
 			_errorPotMessage.SetActive(false);
+			/*
 			if (itemToInspect.ItemType.ActionType == ItemInventoryActionType.Cook)
 			{
 				isInteractable = _currentInventory.hasIngredients(itemToInspect.IngredientsList) && _isNearPot;
@@ -232,7 +234,7 @@ public class UIInventory : MonoBehaviour
 				isInteractable = false;
 				_actionButton.gameObject.SetActive(false);
 			}
-
+			*/
 			//set button
 			_actionButton.FillInventoryButton(itemToInspect.ItemType, isInteractable);
 		}
@@ -267,6 +269,7 @@ public class UIInventory : MonoBehaviour
 
 	void OnActionButtonClicked()
 	{
+		/*
 		//find the selected Item
 		if (_availableItemSlots.Count > selectedItemId
 			&& selectedItemId > -1)
@@ -292,6 +295,7 @@ public class UIInventory : MonoBehaviour
 					break;
 			}
 		}
+		*/
 	}
 
 	void UseItem(ItemSO itemToUse)

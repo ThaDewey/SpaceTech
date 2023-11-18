@@ -36,12 +36,13 @@ public class InventorySO : ScriptableObject
 			ItemStack currentItemStack = _items[i];
 			if (item == currentItemStack.Item)
 			{
+				/*
 				//only add to the amount if the item is usable 
 				if (currentItemStack.Item.ItemType.ActionType == ItemInventoryActionType.Use)
 				{
 					currentItemStack.Amount += count;
 				}
-
+				*/
 				return;
 			}
 		}
