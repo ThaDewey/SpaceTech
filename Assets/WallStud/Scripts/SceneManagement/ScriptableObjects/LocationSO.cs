@@ -5,7 +5,7 @@ using UnityEngine.Localization;
 /// This class contains Settings specific to Locations only
 /// </summary>
 
-[CreateAssetMenu(fileName = "NewLocation", menuName = "Scene Data/Location")]
+[CreateAssetMenu(fileName = "NewLocation", menuName = "Game/Scene Data/Location")]
 public class LocationSO : GameSceneSO
 {
 	public LocalizedString locationName;

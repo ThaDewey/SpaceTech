@@ -14,7 +14,7 @@ public class StartGame : MonoBehaviour
 	[SerializeField] private bool _showLoadScreen = default;
 	
 	[Header("Broadcasting on")]
-	[SerializeField] private LoadEventChannelSO _loadLocation = default;
+	[SerializeField] private LoadSceneEventChannelSO _loadLocation = default;
 
 	[Header("Listening to")]
 	[SerializeField] private VoidEventChannelSO _onNewGameButton = default;
@@ -41,7 +41,7 @@ public class StartGame : MonoBehaviour
 		
 		_saveSystem. WriteEmptySaveFile();
 		_saveSystem.SetNewGameData();
-		_loadLocation.RaiseEvent(_locationsToLoad, _showLoadScreen);
+		_loadLocation.RaiseEvent(_locationsToLoad);
 	}
 
 	private void ContinuePreviousGame()
@@ -67,7 +67,7 @@ public class StartGame : MonoBehaviour
 		if (asyncOperationHandle.Status == AsyncOperationStatus.Succeeded)
 		{
 			LocationSO locationSO = asyncOperationHandle.Result;
-			_loadLocation.RaiseEvent(locationSO, _showLoadScreen);
+			_loadLocation.RaiseEvent(locationSO);
 		}
 	}
 }

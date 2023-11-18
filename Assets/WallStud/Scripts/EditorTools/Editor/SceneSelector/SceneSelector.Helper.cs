@@ -82,10 +82,12 @@ namespace SceneSelectorInternal
 
 		public static void OpenSceneSafe(GameSceneSO gameSceneSO)
 		{
+			/*
 			if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
 			{
 				EditorSceneManager.OpenScene(AssetDatabase.GetAssetPath(gameSceneSO.sceneReference.editorAsset));
 			}
+			*/
 		}
 
 		public static Color GetDefaultColor(GameSceneSO gameScene)

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Data.Common;
 using UnityEngine;
 
 
@@ -10,7 +11,12 @@ using UnityEngine;
 public class ItemData : ScriptableObject {
 
 	public string itemName;
-	public int itemId;
+	public string description;
+	public Sprite sprite;
+	public int itemId = 0;
+	public bool stackable = true;
 	public ItemType itemType;
+	public int capacity=64;
+
 
 }
