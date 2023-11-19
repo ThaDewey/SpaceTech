@@ -8,4 +8,14 @@ static class UIToolkitExtensions
     public static Label GetLabel(this VisualElement element, string label) => element.Q<Label>(label);
 
 
+    public static Button CreateButton(this VisualElement element,VisualElement parent, string buttonName) { 
+        Button but = new Button();
+        but.name = buttonName;
+        but.text = buttonName;
+        parent.Add(but);
+        return but;
+
+    }
+
+
 }
