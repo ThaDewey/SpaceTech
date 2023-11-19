@@ -428,6 +428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1679345356}
   - component: {fileID: 1679345355}
+  - component: {fileID: 1679345357}
   m_Layer: 5
   m_Name: hotbar
   m_TagString: Untagged
@@ -467,26 +468,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1838672134 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4261738289343585883, guid: 9f70ac6480188144c852e4703c7431b0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1413098870987217091}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1838672135
+--- !u!114 &1679345357
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838672134}
+  m_GameObject: {fileID: 1679345354}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bf5bcb4f5d766340a82073562b0d826, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c0edf1c222db3e4dabf185f3a6016f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory:
-  - {fileID: 11400000, guid: 761ed3cb91d4a87488e5cc6f1d535697, type: 2}
+  doc: {fileID: 1679345355}
+  inventory: []
+  playerInventory: {fileID: 11400000, guid: e0320ac97914cb6438cd97b37af440ea, type: 2}
 --- !u!1839735485 &285818277609564698
 Tilemap:
   m_ObjectHideFlags: 0
@@ -871,11 +867,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4261738289343585883, guid: 9f70ac6480188144c852e4703c7431b0,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1838672135}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f70ac6480188144c852e4703c7431b0, type: 3}
 --- !u!1001 &1725489094284838429
 PrefabInstance:
@@ -1096,6 +1088,7 @@ GameObject:
   - component: {fileID: 7049172098400377998}
   - component: {fileID: 7049172098400377999}
   - component: {fileID: 7049172098400378000}
+  - component: {fileID: 7049172098400378001}
   m_Layer: 23
   m_Name: Prototype_Chest_200
   m_TagString: Untagged
@@ -1454,11 +1447,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9733703253adb0d4cb213fa5a7301d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max: 0
+  itemPool: {fileID: 11400000, guid: f6156e8d00eea824bbe25ace5eab7990, type: 2}
+  max: 4
   slots: 0
   contents: []
   isOpen: 0
   isLocked: 0
+--- !u!114 &7049172098400378001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400832264759909282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: f690c4ff549145c419132567b5adbaa5, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 8035ce0e6145c0e4391109ec9df21d04,
+    type: 3}
+  m_SortingOrder: 0
 --- !u!4 &7762914072068600451
 Transform:
   m_ObjectHideFlags: 0

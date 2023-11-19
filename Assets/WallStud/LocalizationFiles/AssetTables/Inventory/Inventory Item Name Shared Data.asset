@@ -139,13 +139,18 @@ MonoBehaviour:
     m_Key: SavoryCakeWithPepper_Dish
     m_Metadata:
       m_Items: []
+  - m_Id: 396974780828073984
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    id: 0
+    rid: 0
   references:
-    version: 1
-    00000000:
+    version: 2
+    RefIds:
+    - rid: 0
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
         asm: Unity.Localization}
       data:
