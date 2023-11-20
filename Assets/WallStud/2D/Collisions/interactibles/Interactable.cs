@@ -14,26 +14,29 @@ public class Interactable : CollidableObject {
 	[SerializeField] private bool _isInteracting;
 
 	private void OnEnable() {
-
-		interact.action.Enable();
-		interact.action.started += OnStarted;
-		interact.action.performed += OnPerformed;
-		interact.action.canceled += OnCanceled;
+		EnableInteraction();
 
 	}
 
 
 
 	private void OnDisable() {
+		DisableInteraction();
+	}
+
+
+	public void EnableInteraction() {
+		interact.action.Enable();
+		interact.action.started += OnStarted;
+		interact.action.performed += OnPerformed;
+		interact.action.canceled += OnCanceled;
+	}
+
+	public void DisableInteraction() {
 		interact.action.started -= OnStarted;
 		interact.action.performed -= OnPerformed;
 		interact.action.canceled -= OnCanceled;
 		interact.action.Disable();
-	}
-	private void OnPerformed(InputAction.CallbackContext context) {
-		if (!_isInteractable && !_isInteracting) return;
-
-		_OnPerformed.Invoke();
 	}
 
 	private void OnStarted(InputAction.CallbackContext context) {
@@ -42,7 +45,11 @@ public class Interactable : CollidableObject {
 		_isInteracting = true;
 		_OnStarted.Invoke();
 	}
-
+	private void OnPerformed(InputAction.CallbackContext context) {
+		if (!_isInteractable && !_isInteracting) return;
+		DisableInteraction();
+		_OnPerformed.Invoke();
+	}
 
 	private void OnCanceled(InputAction.CallbackContext context) {
 		if (!_isInteractable) return;

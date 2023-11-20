@@ -64,7 +64,7 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 3cd92ac50f800e14e965edb5d3d3084f,
     type: 3}
   m_PointAction: {fileID: 0}
   m_MoveAction: {fileID: 0}

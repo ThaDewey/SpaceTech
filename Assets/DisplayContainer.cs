@@ -11,33 +11,43 @@ public class DisplayContainer : MonoBehaviour {
 	[SerializeField] private VisualElement root;
 	[SerializeField] private VisualElement containerContents;
 	[SerializeField] private Containers container;
+	[SerializeField] private Button close;
 
 
 	private void Awake() {
 		document = GetComponent<UIDocument>();
 		root = document.rootVisualElement;
+
 	}
 
 	// Start is called before the first frame update
 	void Start() {
 		containerContents = root.Q<VisualElement>("ContainerInventory");
+
+		containerContents.Hide();
+
+	}
+
+	public void OnOpen() {
+		close = containerContents.CreateButton("close");
+		close.clicked += OnClose;
+		close.clicked += GetComponent<Interactable>().EnableInteraction;
+		Debug.Log("OnOpen");
+		containerContents.Show();
 		DisplayContents();
 	}
-
-	// Update is called once per frame
-	void Update() {
-
+	public void OnClose() {
+		Debug.Log("OnClose");
+		containerContents.contentContainer.Q<VisualElement>("unity-content-container").Clear();	
+		containerContents.Hide();
+		close.clicked -= OnClose;
 	}
-
-	public void OnOpen() { 
-	//containerContents.style.display.
-	
-	}
-
-
+	 
 	private void DisplayContents() {
 		foreach (Item item in container.contents) {
-			root.CreateButton(containerContents, item.name);
+			//Debug.Log(containerContents.contentContainer);
+			containerContents.contentContainer.Q<VisualElement>("unity-content-container").CreateButton(item.name, item.icon, "item");
+
 		}
 	}
 }

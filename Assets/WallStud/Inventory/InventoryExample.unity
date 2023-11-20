@@ -959,61 +959,61 @@ PrefabInstance:
         type: 3}
       propertyPath: m_MoveAction
       value: 
-      objectReference: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018,
+      objectReference: {fileID: -72835681210293144, guid: 3cd92ac50f800e14e965edb5d3d3084f,
         type: 3}
     - target: {fileID: 5647886093005629615, guid: e8ab1e12e359c4944babff1b528e3c58,
         type: 3}
       propertyPath: m_PointAction
       value: 
-      objectReference: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018,
+      objectReference: {fileID: -2883840347560410989, guid: 3cd92ac50f800e14e965edb5d3d3084f,
         type: 3}
     - target: {fileID: 5647886093005629615, guid: e8ab1e12e359c4944babff1b528e3c58,
         type: 3}
       propertyPath: m_CancelAction
       value: 
-      objectReference: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018,
+      objectReference: {fileID: 7847117415553834510, guid: 3cd92ac50f800e14e965edb5d3d3084f,
         type: 3}
     - target: {fileID: 5647886093005629615, guid: e8ab1e12e359c4944babff1b528e3c58,
         type: 3}
       propertyPath: m_SubmitAction
       value: 
-      objectReference: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018,
+      objectReference: {fileID: -8960519112800437778, guid: 3cd92ac50f800e14e965edb5d3d3084f,
         type: 3}
     - target: {fileID: 5647886093005629615, guid: e8ab1e12e359c4944babff1b528e3c58,
         type: 3}
       propertyPath: m_LeftClickAction
       value: 
-      objectReference: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018,
+      objectReference: {fileID: -9019123634186312472, guid: 3cd92ac50f800e14e965edb5d3d3084f,
         type: 3}
     - target: {fileID: 5647886093005629615, guid: e8ab1e12e359c4944babff1b528e3c58,
         type: 3}
       propertyPath: m_RightClickAction
       value: 
-      objectReference: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018,
+      objectReference: {fileID: -7990808134598046552, guid: 3cd92ac50f800e14e965edb5d3d3084f,
         type: 3}
     - target: {fileID: 5647886093005629615, guid: e8ab1e12e359c4944babff1b528e3c58,
         type: 3}
       propertyPath: m_MiddleClickAction
       value: 
-      objectReference: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018,
+      objectReference: {fileID: 5557212724479720143, guid: 3cd92ac50f800e14e965edb5d3d3084f,
         type: 3}
     - target: {fileID: 5647886093005629615, guid: e8ab1e12e359c4944babff1b528e3c58,
         type: 3}
       propertyPath: m_ScrollWheelAction
       value: 
-      objectReference: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018,
+      objectReference: {fileID: 9115741059489515375, guid: 3cd92ac50f800e14e965edb5d3d3084f,
         type: 3}
     - target: {fileID: 5647886093005629615, guid: e8ab1e12e359c4944babff1b528e3c58,
         type: 3}
       propertyPath: m_TrackedDevicePositionAction
       value: 
-      objectReference: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018,
+      objectReference: {fileID: 8348497442099826438, guid: 3cd92ac50f800e14e965edb5d3d3084f,
         type: 3}
     - target: {fileID: 5647886093005629615, guid: e8ab1e12e359c4944babff1b528e3c58,
         type: 3}
       propertyPath: m_TrackedDeviceOrientationAction
       value: 
-      objectReference: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018,
+      objectReference: {fileID: 6292093805064290453, guid: 3cd92ac50f800e14e965edb5d3d3084f,
         type: 3}
     - target: {fileID: 7000392942293906475, guid: e8ab1e12e359c4944babff1b528e3c58,
         type: 3}
@@ -1089,6 +1089,7 @@ GameObject:
   - component: {fileID: 7049172098400377999}
   - component: {fileID: 7049172098400378000}
   - component: {fileID: 7049172098400378001}
+  - component: {fileID: 7049172098400378002}
   m_Layer: 23
   m_Name: Prototype_Chest_200
   m_TagString: Untagged
@@ -1390,19 +1391,7 @@ MonoBehaviour:
     type: 3}
   _OnStarted:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7049172098400377999}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: SetAsInteracting
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   _OnPerformed:
     m_PersistentCalls:
       m_Calls:
@@ -1418,9 +1407,18 @@ MonoBehaviour:
           m_StringArgument: Open Chest
           m_BoolArgument: 0
         m_CallState: 2
-  _OnCanceled:
-    m_PersistentCalls:
-      m_Calls:
+      - m_Target: {fileID: 7049172098400378002}
+        m_TargetAssemblyTypeName: DisplayContainer, Assembly-CSharp
+        m_MethodName: OnOpen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 7049172098400377999}
         m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
         m_MethodName: SetAsInteracting
@@ -1433,6 +1431,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _OnCanceled:
+    m_PersistentCalls:
+      m_Calls: []
   _isInteractable: 0
   _isInteracting: 0
 --- !u!114 &7049172098400378000
@@ -1470,6 +1471,20 @@ MonoBehaviour:
   sourceAsset: {fileID: 9197481963319205126, guid: 8035ce0e6145c0e4391109ec9df21d04,
     type: 3}
   m_SortingOrder: 0
+--- !u!114 &7049172098400378002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400832264759909282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439d910df464bec46b79100dc505965a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  document: {fileID: 0}
+  container: {fileID: 7049172098400378000}
 --- !u!4 &7762914072068600451
 Transform:
   m_ObjectHideFlags: 0
