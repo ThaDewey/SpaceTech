@@ -29,30 +29,22 @@ static class UIToolkitExtensions {
 	public static void SetVisibility(this VisualElement e, Visibility v) => e.style.visibility = v;
 	public static void SetBackgroundImage(this VisualElement e, Sprite s) => e.style.backgroundImage = new StyleBackground(s);
 
-	public static Button CreateButton(this VisualElement element, string buttonName) {
+	public static Button CreateButton(this VisualElement e, string butName) {
 		Button but = new Button();
-		but.name = buttonName;
-		but.text = buttonName;
-		element.Add(but);
+		but.name = butName;
+		but.text = butName;
+		e.Add(but);
 		return but;
 
 	}
 	public static Button CreateButton(this VisualElement e, string buttonName,Sprite s) {
-		Debug.Log(s);
-
-		Button but = new Button();
-		but.name = buttonName;
-		but.text = buttonName;
+		var but = CreateButton(e, buttonName);
 		SetBackgroundImage(but, s);
 		e.Add(but);
 		return but;
 	}
-	public static Button CreateButton(this VisualElement e, string buttonName, Sprite s, string className) {
-		Debug.Log(s);
-		Button but = new Button();
-		but.name = buttonName;
-		but.text = buttonName;
-		SetBackgroundImage(but, s);
+	public static Button CreateButton(this VisualElement e, string butName, Sprite s, string className) {
+		var but = CreateButton(e,butName,s);
 		but.AddToClassList(className);
 		e.Add(but);
 		return but;
