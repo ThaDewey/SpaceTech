@@ -4,6 +4,21 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 static class UIToolkitExtensions {
+
+	public const string SCROLL_VIEW_CONTENT = "unity-content-container";
+
+
+	#region ScrollView
+
+	public static ScrollView GetScrollView(this VisualElement p, string ScrollViewName)=> p.Q<ScrollView>(ScrollViewName);
+	public static VisualElement GetScrollViewContent(this ScrollView s)=> s.contentContainer;
+
+
+
+	#endregion
+
+
+
 	public static Button GetButton(this VisualElement element, string btn_name) => element.Q<Button>(btn_name);
 
 	public static Label GetLabel(this VisualElement element, string label) => element.Q<Label>(label);

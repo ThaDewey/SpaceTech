@@ -16,15 +16,17 @@ public class CollidableObject : MonoBehaviour {
 	}
 
 	public virtual void OnCollisionEnter2D(Collision2D collision) {
+		/*
 		col.OverlapCollider(filter, colliders);
 
 		foreach (Collider2D c in colliders) {
 			OnCollided(c.gameObject);
 		}
+		*/
 	}
 
 	public virtual void OnCollided(GameObject GO) {
-		Debug.Log("Collided with " + GO.name);
+	//	Debug.Log("Collided with " + GO.name);
 
 	}
 

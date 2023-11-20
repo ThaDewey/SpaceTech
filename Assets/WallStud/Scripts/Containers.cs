@@ -5,17 +5,17 @@ using UnityEngine;
 public class Containers : MonoBehaviour, IInteract {
 
 	public ItemLibrary itemPool;
-	
+
 	public int max;
 	public int slots;
 	public List<Item> contents;
 	public bool isOpen;
 	public bool isLocked;
 
-	private void populateContainer() { 
+	private void populateContainer() {
 		int randomAmount = Random.Range(1, max);
 		Debug.Log($"randomAmount:{randomAmount}");
-	 contents= itemPool.PopulateContainer(randomAmount);
+		contents = itemPool.PopulateContainer(randomAmount);
 	}
 
 	private void Awake() {
@@ -28,16 +28,19 @@ public class Containers : MonoBehaviour, IInteract {
 		Debug.Log("OnOpen()");
 	}
 	public virtual void OnClose() {
+		isOpen = false;
 		Debug.Log("OnClose()");
 	}
 
 	public void PerformedInteract() { }
 
 	public void StartInteract() {
-		isOpen = true;
-		OnOpen();
+
 	}
 
 	public void CancelInteract() {
+
+		isOpen = true;
+		OnOpen();
 	}
 }

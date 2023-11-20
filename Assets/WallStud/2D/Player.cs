@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
 	private void Awake() {
 		//agentAnimations = GetComponent<AgentAnimations>();
 		agentMover = GetComponent<AgentMover>();
+	
 		
 	}
 
