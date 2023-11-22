@@ -52,7 +52,7 @@ public class UIManager : MonoBehaviour
 		_openInventoryScreenForCookingEvent.OnEventRaised += SetInventoryScreenForCooking;
 		_setInteractionEvent.OnEventRaised += SetInteractionPanel;
 		_inputReader.OpenInventoryEvent += SetInventoryScreen;
-		_inventoryPanel.Closed += CloseInventoryScreen;
+		//_inventoryPanel.Closed += CloseInventoryScreen;
 		_cookRecipeEvent.OnEventRaised += PlayCookingAnimation;
 	}
 
@@ -65,7 +65,7 @@ public class UIManager : MonoBehaviour
 		_openInventoryScreenForCookingEvent.OnEventRaised -= SetInventoryScreenForCooking;
 		_setInteractionEvent.OnEventRaised -= SetInteractionPanel;
 		_inputReader.OpenInventoryEvent -= SetInventoryScreen;
-		_inventoryPanel.Closed -= CloseInventoryScreen;
+		//_inventoryPanel.Closed -= CloseInventoryScreen;
 		_cookRecipeEvent.OnEventRaised -= PlayCookingAnimation;
 	}
 
@@ -226,12 +226,12 @@ public class UIManager : MonoBehaviour
 		_inputReader.CloseInventoryEvent += CloseInventoryScreen;
 		if (isForCooking)
 		{
-			_inventoryPanel.FillInventory(InventoryTabType.Recipe, true);
+		//	_inventoryPanel.FillInventory(InventoryTabType.Recipe, true);
 
 		}
 		else
 		{
-			_inventoryPanel.FillInventory();
+			//_inventoryPanel.FillInventory();
 		}
 
 		_inventoryPanel.gameObject.SetActive(true);

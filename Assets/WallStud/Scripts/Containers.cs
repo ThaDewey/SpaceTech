@@ -1,10 +1,17 @@
 ﻿using JetBrains.Annotations;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Containers : MonoBehaviour, IInteract {
 
 	public ItemLibrary itemPool;
+
+	public DisplayContainer display;
+
+	public UnityEvent _OnOpen;
+	public UnityEvent _OnClose;
+
 
 	public int max;
 	public int slots;
@@ -32,7 +39,9 @@ public class Containers : MonoBehaviour, IInteract {
 		Debug.Log("OnClose()");
 	}
 
-	public void PerformedInteract() { }
+	public void PerformedInteract() {
+	
+	}
 
 	public void StartInteract() {
 

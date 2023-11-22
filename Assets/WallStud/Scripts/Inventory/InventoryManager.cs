@@ -38,15 +38,18 @@ public class InventoryManager : MonoBehaviour
 
 	private void AddItemWithUIUpdate(ItemSO item)
 	{
+		/*
 		_currentInventory.Add(item);
 		if (_currentInventory.Contains(item))
 		{
 			ItemStack itemToUpdate = _currentInventory.Items.Find(o => o.Item == item);
 		}
+		*/
 	}
 
 	private void RemoveItemWithUIUpdate(ItemSO item)
 	{
+		/*
 		ItemStack itemToUpdate = new ItemStack();
 
 		if (_currentInventory.Contains(item))
@@ -57,28 +60,36 @@ public class InventoryManager : MonoBehaviour
 		_currentInventory.Remove(item);
 
 		bool removeItem = _currentInventory.Contains(item);
+		*/
 	}
 
 	private void AddItem(ItemSO item)
 	{
+		/*
 		_currentInventory.Add(item);
 		_saveSystem.SaveDataToDisk();
+		*/
 	}
 
 	private void AddItemStack(ItemStack itemStack)
 	{
+		/*
 		_currentInventory.Add(itemStack.Item, itemStack.Amount);
 		_saveSystem.SaveDataToDisk();
+		*/
 	}
 
 	private void RemoveItem(ItemSO item)
 	{
+		/*
 		_currentInventory.Remove(item);
 		_saveSystem.SaveDataToDisk();
+		*/
 	}
 
 	private void CookRecipeEventRaised(ItemSO recipe)
 	{
+		/*
 		if (_currentInventory.Contains(recipe))
 		{
 			List<ItemStack> ingredients = recipe.IngredientsList;
@@ -87,16 +98,17 @@ public class InventoryManager : MonoBehaviour
 			if (_currentInventory.hasIngredients(ingredients))
 			{
 				for (int i = 0; i < ingredients.Count; i++)
-				{/*
+				{
 					if ((ingredients[i].Item.ItemType.ActionType == ItemInventoryActionType.Use))
 						_currentInventory.Remove(ingredients[i].Item, ingredients[i].Amount);
-					*/
+					
 				}
 				_currentInventory.Add(recipe.ResultingDish);
 			}
 		}
 
 		_saveSystem.SaveDataToDisk();
+		*/
 	}
 
 	private void UseItemEventRaised(ItemSO item)

@@ -52,6 +52,8 @@ public class SaveSystem : ScriptableObject
 
 	public IEnumerator LoadSavedInventory()
 	{
+		yield return null;
+		/*
 		_playerInventory.Items.Clear();
 		foreach (var serializedItemStack in saveData._itemStacks)
 		{
@@ -63,6 +65,7 @@ public class SaveSystem : ScriptableObject
 				_playerInventory.Add(itemSO, serializedItemStack.amount);
 			}
 		}
+		*/
 	}
 	public void LoadSavedQuestlineStatus()
 	{
@@ -72,6 +75,7 @@ public class SaveSystem : ScriptableObject
 
 	public void SaveDataToDisk()
 	{
+		/*
 		saveData._itemStacks.Clear();
 		foreach (var itemStack in _playerInventory.Items)
 		{
@@ -91,6 +95,7 @@ public class SaveSystem : ScriptableObject
 				//Debug.Log("Save successful " + saveFilename);
 			}
 		}
+		*/
 	}
 
 	public void WriteEmptySaveFile()
@@ -100,12 +105,13 @@ public class SaveSystem : ScriptableObject
 	}
 	public void SetNewGameData()
 	{
+		/*
 		FileManager.WriteToFile(saveFilename, "");
 		_playerInventory.Init();
 		_questManagerSO.ResetQuestlines();
 
 		SaveDataToDisk();
-
+		*/
 	}
 	void SaveSettings()
 	{

@@ -178,7 +178,7 @@ public class QuestManagerSO : ScriptableObject
 
 	void CheckStepValidity()
 	{
-
+		/*
 		if (_currentStep != null)
 		{
 			switch (_currentStep.Type)
@@ -223,6 +223,7 @@ public class QuestManagerSO : ScriptableObject
 					break;
 			}
 		}
+		*/
 	}
 
 	void EndDialogue(int dialogueType)

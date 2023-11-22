@@ -6,18 +6,14 @@ using UnityEngine.UIElements;
 /// <summary>
 /// Controlller for showing Container contents
 /// </summary>
-public class DisplayContainer : MonoBehaviour {
-	[SerializeField] private UIDocument document;
-	[SerializeField] private VisualElement root;
-	[SerializeField] private VisualElement containerContents;
-	[SerializeField] private Containers container;
-	[SerializeField] private Button close;
+public class DisplayContainer : Window {
+	private VisualElement containerContents;
+	private Button close;
+	private Containers container;
 
 
-	private void Awake() {
-		document = GetComponent<UIDocument>();
-		root = document.rootVisualElement;
-
+	protected override void Awake() {
+		container = GetComponent<Containers>();
 	}
 
 	// Start is called before the first frame update
@@ -38,11 +34,11 @@ public class DisplayContainer : MonoBehaviour {
 	}
 	public void OnClose() {
 		Debug.Log("OnClose");
-		containerContents.contentContainer.Q<VisualElement>("unity-content-container").Clear();	
+		containerContents.contentContainer.Q<VisualElement>("unity-content-container").Clear();
 		containerContents.Hide();
 		close.clicked -= OnClose;
 	}
-	 
+
 	private void DisplayContents() {
 		foreach (Item item in container.contents) {
 			//Debug.Log(containerContents.contentContainer);

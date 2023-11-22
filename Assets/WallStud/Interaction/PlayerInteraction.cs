@@ -8,19 +8,16 @@ public class PlayerInteract : MonoBehaviour {
 
 	[SerializeField] private InputActionReference interact;
 	[SerializeField] private InputActionReference pointer;
-	[SerializeField] private bool isInteractable;
+	[SerializeField] private bool canInteract;
 	[SerializeField] private bool isInteracting;
 	[SerializeField] private IInteract interaction;
 	[SerializeField] private Camera mainCamera;
 	[SerializeField] private bool is2D = true;
-	private Collider2D col;
-	[SerializeField] private ContactFilter2D filter;
 	[SerializeField] private List<Collider2D> colliders;
 
 
 	private void Awake() {
 		mainCamera = Camera.main;
-		col = GetComponent<Collider2D>();
 	}
 
 
@@ -28,12 +25,7 @@ public class PlayerInteract : MonoBehaviour {
 		EnableAction();
 	}
 
-	private void EnableAction() {
-		interact.action.Enable();
-		interact.action.started += OnStarted;
-		interact.action.performed += OnPerformed;
-		interact.action.canceled += OnCanceled;
-	}
+
 
 	private void OnDisable() {
 		DisableAction();
@@ -45,8 +37,15 @@ public class PlayerInteract : MonoBehaviour {
 		interact.action.canceled -= OnCanceled;
 		interact.action.Disable();
 	}
-
+	private void EnableAction() {
+		interact.action.Enable();
+		interact.action.started += OnStarted;
+		interact.action.performed += OnPerformed;
+		interact.action.canceled += OnCanceled;
+	}
 	private void DetectObject() {
+		if (!canInteract) return;
+
 		Debug.Log($"DetectObject()");
 		var pointerPos = pointer.action.ReadValue<Vector2>();
 		Ray ray = mainCamera.ScreenPointToRay(pointerPos);
@@ -54,7 +53,8 @@ public class PlayerInteract : MonoBehaviour {
 		if (is2D) {
 			RaycastHit2D hits2D = Physics2D.GetRayIntersection(ray);
 			if (hits2D.collider != null) {
-				Debug.Log($"3D hit: {hits2D.collider.name}");
+				Debug.Log($"2d hit: {hits2D.collider.name}");
+				interaction.PerformedInteract();
 			}
 		} else {//3d
 				//https://www.youtube.com/watch?v=JID7YaHAtKA
@@ -62,6 +62,7 @@ public class PlayerInteract : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit)) {
 				if (hit.collider != null) {
 					Debug.Log($"3D hit: {hit.collider.name}");
+					interaction.PerformedInteract();
 				}
 			}
 		}
@@ -73,46 +74,33 @@ public class PlayerInteract : MonoBehaviour {
 
 		interaction = collision.collider.GetComponent<IInteract>();
 
-		if (interaction != null) interaction.PerformedInteract();
+
+
+		if (interaction == null) return;
+
+		canInteract = true;
 
 	}
 
-	public void OnCollided(GameObject GO) {
-		Debug.Log($"OnCollided({GO.name})");
-		isInteractable = true;
-		interaction = GO.GetComponent<IInteract>();
-
+	public virtual void OnCollisionExit2D(Collision2D collision) {
+		canInteract = false;
+		interaction = null;
 	}
 
 	private void OnPerformed(InputAction.CallbackContext context) {
-		if (!isInteractable && !isInteracting) return;
-		interaction.PerformedInteract();
+		if (!canInteract && !isInteracting) return;
 
+		DetectObject();
 	}
 
 	private void OnStarted(InputAction.CallbackContext context) {
-		if (!isInteractable) return;
-
-		interaction.StartInteract();
-		isInteracting = true;
 	}
 
 
 	private void OnCanceled(InputAction.CallbackContext context) {
-		if (!isInteractable) return;
-		isInteracting = false;
-		interaction.CancelInteract();
-
-
 	}
 
 
 
-	public void SetAsInteracting(bool b) {
-		isInteracting = b;
-	}
-	public void Test(string msg) {
-		Debug.Log(msg);
-	}
-
+	
 }

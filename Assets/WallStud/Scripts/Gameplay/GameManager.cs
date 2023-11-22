@@ -39,19 +39,19 @@ public class GameManager : MonoBehaviour
 
 	void AddRockCandyRecipe()
 	{
-		_inventory.Add(_rockCandyRecipe);
+		//_inventory.Add(_rockCandyRecipe);
 	}
 
 	void AddSweetDoughRecipe()
 	{
-		_inventory.Add(_sweetDoughRecipe);
+	//	_inventory.Add(_sweetDoughRecipe);
 	}
 
 	void AddFinalRecipes()
 	{
 		foreach (ItemSO item in _finalRecipes)
 		{
-			_inventory.Add(item);
+			//_inventory.Add(item);
 		}
 	}
 
