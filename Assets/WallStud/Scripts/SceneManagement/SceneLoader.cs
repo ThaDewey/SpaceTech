@@ -1,8 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
 /// <summary>
@@ -23,15 +20,15 @@ public class SceneLoader : MonoBehaviour
 	[SerializeField] private VoidEventChannelSO _onSceneReady = default; //picked up by the SpawnSystem
 	[SerializeField] private FadeChannelSO _fadeRequestChannel = default;
 
-	private AsyncOperationHandle<SceneInstance> _loadingOperationHandle;
-	private AsyncOperationHandle<SceneInstance> _gameplayManagerLoadingOpHandle;
+	//private AsyncOperationHandle<SceneInstance> _loadingOperationHandle;
+	//private AsyncOperationHandle<SceneInstance> _gameplayManagerLoadingOpHandle;
 
 	//Parameters coming from scene loading requests
 	private GameSceneSO _sceneToLoad;
 	private GameSceneSO _currentlyLoadedScene;
 	private bool _showLoadingScreen;
 
-	private SceneInstance _gameplayManagerSceneInstance = new SceneInstance();
+//	private SceneInstance _gameplayManagerSceneInstance = new SceneInstance();
 	private float _fadeDuration = .5f;
 	private bool _isLoading = false; //To prevent a new loading request while already loading a new scene
 
@@ -102,19 +99,20 @@ public class SceneLoader : MonoBehaviour
 		}
 		*/
 	}
-
+	/*
 	private void OnGameplayManagersLoaded(AsyncOperationHandle<SceneInstance> obj)
 	{
 		_gameplayManagerSceneInstance = _gameplayManagerLoadingOpHandle.Result;
 
 		StartCoroutine(UnloadPreviousScene());
 	}
-
+	*/
 	/// <summary>
 	/// Prepares to load the main menu scene, first removing the Gameplay scene in case the game is coming back from gameplay to menus.
 	/// </summary>
 	private void LoadMenu(GameSceneSO menuToLoad)
 	{
+		/*
 		//Prevent a double-loading, for situations where the player falls in two Exit colliders in one frame
 		if (_isLoading)
 			return;
@@ -129,6 +127,7 @@ public class SceneLoader : MonoBehaviour
 			Addressables.UnloadSceneAsync(_gameplayManagerLoadingOpHandle, true);
 
 		StartCoroutine(UnloadPreviousScene());
+		*/
 	}
 
 	/// <summary>
@@ -180,7 +179,7 @@ public class SceneLoader : MonoBehaviour
 		_loadingOperationHandle.Completed += OnNewSceneLoaded;
 		*/
 	}
-
+	/*
 	private void OnNewSceneLoaded(AsyncOperationHandle<SceneInstance> obj)
 	{
 		//Save loaded scenes (to be unloaded at next load request)
@@ -199,7 +198,7 @@ public class SceneLoader : MonoBehaviour
 
 		StartGameplay();
 	}
-
+	*/
 	private void StartGameplay()
 	{
 		_onSceneReady.RaiseEvent(); //Spawn system will spawn the PigChef in a gameplay scene

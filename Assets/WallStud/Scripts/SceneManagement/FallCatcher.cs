@@ -11,7 +11,7 @@ public class FallCatcher : MonoBehaviour
 		{
 			_pathStorage.lastPathTaken = _leadsToPath;
 
-			other.GetComponent<Damageable>().Kill();
+			//other.GetComponent<Damageable>().Kill();
 		}
 	}
 }

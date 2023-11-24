@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 1115584449}
   - component: {fileID: 1115584448}
   - component: {fileID: 1115584447}
+  - component: {fileID: 1115584450}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -262,6 +263,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d460d018efd1148b0b1f7aae825e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
+  hideOnStart: 1
+  myInventory: {fileID: 11400000, guid: e0320ac97914cb6438cd97b37af440ea, type: 2}
 --- !u!114 &1115584448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +298,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1115584450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115584446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b31848c01a7f4458aaf70affee7ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 1115584447}
+  reference: {fileID: 1934699552562925058, guid: 3cd92ac50f800e14e965edb5d3d3084f,
+    type: 3}
 --- !u!114 &1432914587 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5647886093005629615, guid: e8ab1e12e359c4944babff1b528e3c58,
@@ -595,6 +614,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439d910df464bec46b79100dc505965a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
+  hideOnStart: 1
 --- !u!114 &2051807553
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
+
 using UnityEngine.UIElements;
 
 public class InventoryUI_Hotbar : MonoBehaviour {
@@ -22,13 +22,13 @@ public class InventoryUI_Hotbar : MonoBehaviour {
 		hotbar = hotbarHolder.Q<VisualElement>("hotbar");
 		Debug.Log(hotbar);
 
-		inventory = playerInventory.inventory;
+		inventory = playerInventory.slots;
 	}
 
 	private void Start() {
 		hotbar.Clear();
 		
-		inventory = playerInventory.inventory;
+		inventory = playerInventory.slots;
 		
 		
 		UpdateDisplay();

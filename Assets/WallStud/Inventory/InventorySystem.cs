@@ -1,23 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-[System.Obsolete]
-public class InventorySystem : MonoBehaviour
-{
+[Obsolete]
+public static class InventorySystem {
 
 
-	/*
-	private void Awake() {
-		//Add(new Item { itemType = ItemType.sword, amount = 1 });
-				Debug.Log(inventory.Count);
-	}
-	*/
-	/*
-	public void Add(Item item) { 
-		inventory.Add(item);
-	
-	}
-	*/
+
 
 }

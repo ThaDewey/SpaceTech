@@ -4,11 +4,11 @@ using UnityEngine;
 [InlineEditor, CreateAssetMenu(fileName = "Player Inventory", menuName = "SpaceTech/Inventory/Player Inventory")]
 public class PlayerInventorySO : ScriptableObject {
 
-	public List<Item> inventory;
+	public int amountOfSlots;
+	public List<Item> slots;
 
-	public PlayerInventorySO() {
-		inventory = new List<Item>();
-
+	public PlayerInventorySO(int count) {
+		slots = new List<Item>(amountOfSlots);
 	}
 
 

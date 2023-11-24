@@ -42,7 +42,7 @@ public class DisplayContainer : Window {
 	private void DisplayContents() {
 		foreach (Item item in container.contents) {
 			//Debug.Log(containerContents.contentContainer);
-			containerContents.contentContainer.Q<VisualElement>("unity-content-container").CreateButton(item.name, item.icon, "item");
+			containerContents.contentContainer.Q<VisualElement>("unity-content-container").CreateButton(item.name, "item", item.icon);
 
 		}
 	}

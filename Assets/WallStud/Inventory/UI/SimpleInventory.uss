@@ -1,3 +1,28 @@
+.menu {
+    flex-grow: 1;
+}
+
+.Window {
+    background-image: url('project://database/Assets/WallStud/Visuals/GUI/01_Flat_Theme/Spritesheets/Spritesheet_UI_Flat.png?fileID=-114601586&guid=fb2112d6b4054c44c89b9259b0e70747&type=3#ui_Panel_blue_sq_lg');
+    margin-bottom: 43px;
+    background-color: rgb(255, 255, 255);
+    flex-grow: 1;
+    margin-top: 75px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    flex-wrap: nowrap;
+    -unity-slice-left: 9;
+    -unity-slice-top: 9;
+    -unity-slice-right: 9;
+    -unity-slice-bottom: 9;
+}
+
 .panel-glass {
     height: auto;
     flex-grow: 1;
@@ -11,9 +36,9 @@
     opacity: 1;
 }
 
-.item {
-    width: 100px;
-    height: 100px;
+.slot {
+    width: 120px;
+    height: 120px;
     flex-grow: 0;
     margin-top: 10px;
     margin-right: 10px;
@@ -27,62 +52,23 @@
     padding-left: 15px;
 }
 
-.menu {
+.slotimg {
     flex-grow: 1;
+    background-image: url('project://database/Assets/WallStud/Scripts/Quests/Editor/ActorImages/BardHare.png?fileID=2800000&guid=5b0d4d0f220ebf84680ca4150537609b&type=3#BardHare');
 }
 
-#Inventory {
-    flex-grow: 1;
-    margin-top: 200px;
-    margin-right: 100px;
-    margin-bottom: 100px;
-    margin-left: 100px;
-    flex-direction: row;
-    padding-top: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    flex-wrap: nowrap;
-    background-image: url('project://database/Assets/WallStud/Visuals/GUI/GUI_2x.png?fileID=1596565958&guid=4db73ef4e9f1042488fa647cc4a117da&type=3#GUI-Panel-LG');
-}
-
-.scrollView {
-    flex-grow: 1;
-    background-image: url('project://database/Assets/WallStud/Visuals/GUI/GUI_2x.png?fileID=1241938377&guid=4db73ef4e9f1042488fa647cc4a117da&type=3#GUI_Map');
-    -unity-background-scale-mode: scale-and-crop;
-    -unity-slice-left: 4;
-    -unity-slice-top: 4;
-    -unity-slice-right: 4;
-    -unity-slice-bottom: 4;
-    padding-top: 10px;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 10px;
-}
-
-.scroll-container {
-    flex-grow: 1;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-#InventoryContent .unity-base-slider__drag-container {
-}
-
-#InventoryContent .unity-base-slider__dragger {
-    background-image: url('project://database/Assets/WallStud/Visuals/GUI/GUI_2x.png?fileID=-1825252449&guid=4db73ef4e9f1042488fa647cc4a117da&type=3#Panel-item');
-    display: none;
-    visibility: hidden;
-    overflow: visible;
-}
-
-#InventoryContent .unity-base-slider__dragger-border {
-    background-color: rgb(255, 0, 0);
-    display: none;
-    visibility: hidden;
-    overflow: hidden;
-}
-
-#InventoryContent .unity-base-slider__tracker {
-    background-color: rgb(255, 0, 0);
+.itemAmount {
+    flex-grow: 0;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    background-image: url('project://database/Assets/WallStud/Visuals/GUI/01_Flat_Theme/Spritesheets/Spritesheet_UI_Flat.png?fileID=-248972331&guid=fb2112d6b4054c44c89b9259b0e70747&type=3#Spritesheet_UI_Flat_12');
+    -unity-background-scale-mode: stretch-to-fill;
+    -unity-slice-left: 9;
+    -unity-slice-top: 9;
+    -unity-slice-right: 9;
+    -unity-slice-bottom: 9;
 }

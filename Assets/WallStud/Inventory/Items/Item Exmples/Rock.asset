@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   itemType: {fileID: 11400000, guid: 8eb71c996e75d7b4a943d78a1172610d, type: 2}
-  amount: 1
+  amount: 55
   icon: {fileID: 21300000, guid: 83d6e47cfd841b2409012ecd2f4597d6, type: 3}

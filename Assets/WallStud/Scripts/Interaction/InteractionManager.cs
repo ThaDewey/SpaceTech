@@ -12,7 +12,7 @@ public class InteractionManager : MonoBehaviour
 	[Header("Broadcasting on")]
 	[SerializeField] private ItemEventChannelSO _onObjectPickUp = default;
 	[SerializeField] private VoidEventChannelSO _onCookingStart = default;
-	[SerializeField] private DialogueActorChannelSO _startTalking = default;
+	///[SerializeField] private DialogueActorChannelSO _startTalking = default;
 	[SerializeField] private InteractionUIEventChannelSO _toggleInteractionUI = default;
 
 	[Header("Listening to")]
@@ -46,7 +46,7 @@ public class InteractionManager : MonoBehaviour
 		if (_onObjectPickUp != null)
 		{
 			ItemSO currentItem = itemObject.GetComponent<CollectableItem>().GetItem();
-			_onObjectPickUp.RaiseEvent(currentItem);
+			//_onObjectPickUp.RaiseEvent(currentItem);
 		}
 
 		Destroy(itemObject); //TODO: maybe move this destruction in a more general manger, to implement a removal SFX
@@ -71,14 +71,14 @@ public class InteractionManager : MonoBehaviour
 				}
 				break;
 
-			case InteractionType.Talk:
-				if (_startTalking != null)
-				{
-					_potentialInteractions.First.Value.interactableObject.GetComponent<StepController>().InteractWithCharacter();
-					_inputReader.EnableDialogueInput();
-				}
-				break;
-
+				/*case InteractionType.Talk:
+					if (_startTalking != null)
+					{
+						_potentialInteractions.First.Value.interactableObject.GetComponent<StepController>().InteractWithCharacter();
+						_inputReader.EnableDialogueInput();
+					}
+					break;
+					*/
 				//No need to do anything for Pickup type, the StateMachine will transition to the state
 				//and then the AnimationClip will call Collect()
 		}

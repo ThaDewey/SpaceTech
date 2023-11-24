@@ -283,7 +283,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_UI_Flat_7
+      name: ui_Panel_blue_sq_lg
       rect:
         serializedVersion: 2
         x: 32
@@ -438,7 +438,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 5, y: 5, z: 5, w: 5}
       outline: []
       physicsShape: []
@@ -473,9 +473,9 @@ TextureImporter:
       Spritesheet_UI_Flat_4: 2105441035
       Spritesheet_UI_Flat_5: -926281871
       Spritesheet_UI_Flat_6: -529749587
-      Spritesheet_UI_Flat_7: -114601586
       Spritesheet_UI_Flat_8: -2018102143
       Spritesheet_UI_Flat_9: 1740693819
+      ui_Panel_blue_sq_lg: -114601586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
