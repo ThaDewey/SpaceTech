@@ -22,13 +22,13 @@ public class InventoryUI_Hotbar : MonoBehaviour {
 		hotbar = hotbarHolder.Q<VisualElement>("hotbar");
 		Debug.Log(hotbar);
 
-		inventory = playerInventory.slots;
+		inventory = playerInventory.items;
 	}
 
 	private void Start() {
 		hotbar.Clear();
 		
-		inventory = playerInventory.slots;
+		inventory = playerInventory.items;
 		
 		
 		UpdateDisplay();

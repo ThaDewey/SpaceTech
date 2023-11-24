@@ -7,9 +7,8 @@ using UnityEngine.InputSystem;
 public class InventoryUIController : MonoBehaviour
 {
 	[SerializeField] private UIInventory ui;
-
-
 	[SerializeField] private InputActionReference reference;
+
 
 	public void Start() {
 		ui.InitializeInventoryUI();

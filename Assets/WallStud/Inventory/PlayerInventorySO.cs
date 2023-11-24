@@ -5,12 +5,26 @@ using UnityEngine;
 public class PlayerInventorySO : ScriptableObject {
 
 	public int amountOfSlots;
-	public List<Item> slots;
+
+	public List<Item> items;
+	public int slotsCount => items.Count;
 
 	public PlayerInventorySO(int count) {
-		slots = new List<Item>(amountOfSlots);
+		items = new List<Item>(amountOfSlots);
 	}
 
+	public bool isFull { get { return (slotsCount > amountOfSlots) ? true : false; } }
+
+	public void AddItem(Item item) {
+		if (isFull) return;
+
+		items.Add(item);
+	}
+
+	public void RemoveItem(Item item) {
+
+		items.Remove(item);
+	}
 
 
 }

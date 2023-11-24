@@ -10,18 +10,38 @@ using UnityEngine.UIElements;
 /// </summary>
 public class UIInventory : Window {
 	[SerializeField] private PlayerInventorySO myInventory;
-	private List<VisualElement> slots = new List<VisualElement>();
+	private List<InventorySlot> slots = new List<InventorySlot>();
 
 	private VisualElement content;
 	private VisualElement inventory;
 	private VisualElement description;
+
+
+	protected override void Awake() {
+		base.Awake();
+		GameController.OnInventoryChanged += GameController_OnInventoryChanged;
+
+	}
+
+	private void GameController_OnInventoryChanged(string[] itemGuid, InventoryChangeType change) {
+		//Loop through each item and if it has been picked up, add it to the next empty slot
+		foreach (string item in itemGuid) {
+			if (change == InventoryChangeType.Pickup) {
+				var emptySlot = myInventory.items.FirstOrDefault(x => x.ItemGuid.Equals(""));
+
+				if (emptySlot != null) {
+					emptySlot.HoldItem(GameController.GetItemByGuid(item));
+				}
+			}
+		}
+	}
 
 	protected override void Init() {
 		base.Init();
 		inventory = root.GetElement("Inventory");
 		content = inventory.GetElement("InventoryContent");
 		description = inventory.GetElement("InventoryDescription");
-		
+	//	DragAndDropManipulator manipulator = 	new(root.Q<VisualElement>("object"));
 	}
 
 	[Button]
@@ -33,8 +53,9 @@ public class UIInventory : Window {
 	public override void UpdateDisplay() {
 	
 
-		for (int i = 0; i < myInventory.slots.Count; i++) {
-			AddItemToSlot(slots[i], myInventory.slots[i]);
+		for (int i = 0; i < myInventory.items.Count; i++) {
+			//AddItemToSlot(slots[i], myInventory.slots[i]);
+			slots[i].SetItem(myInventory.items[i]);
 		}
 
 
@@ -42,18 +63,12 @@ public class UIInventory : Window {
 		close.clicked += CloseWindow;
 	}
 
-
-
-
-
-
-
 	public void InitializeInventoryUI() {
 		content.Clear();
 
 
 		for (int i = 0; i < myInventory.amountOfSlots; i++) {
-			VisualElement slot = CreateSlot();
+			InventorySlot slot = CreateSlot();
 			
 			slots.Add(slot);
 		}
@@ -61,18 +76,15 @@ public class UIInventory : Window {
 
 
 
-	public VisualElement CreateSlot() {
+	public InventorySlot CreateSlot() {
 		Debug.Log("CreateSlot()");
-		VisualElement slot = content.CreateVisualElement("slot", "slot");
-		return slot;
-	}
-	public static void AddItemToSlot(VisualElement slot, Item _item) {
-		if (slot.childCount > 0) return;
+		InventorySlot slot = new InventorySlot();
+
+		slot.name = "slot";
+		slot.AddToClassList("slot");
+		content.Add(slot);
 		
-		VisualElement slotImg = slot.CreateVisualElement("slotImg", null, _item.icon);
-		Label itemAmount = slotImg.CreateLabel("ItemAmount", _item.amount);
-		SerializedObject item = new SerializedObject(_item);
-		slot.Bind(item);
+		return slot;
 	}
 
 }

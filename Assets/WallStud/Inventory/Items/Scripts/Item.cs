@@ -10,5 +10,16 @@ public class Item : ScriptableObject {
 	public int itemId;
 	public ItemType itemType;
 	public int amount;
+	public string GUID;
+	public string Title;
+	public bool CanDrop;
+	public string _amount =>amount.ToString();
 	public Sprite icon;
 }
+
+public enum InventoryChangeType {
+	Pickup,
+	Drop
+}
+
+public delegate void OnInventoryChangedDelegate(string[] itemGuid, InventoryChangeType change);
