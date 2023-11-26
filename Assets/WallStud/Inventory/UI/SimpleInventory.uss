@@ -72,3 +72,23 @@
     -unity-slice-right: 9;
     -unity-slice-bottom: 9;
 }
+
+.slot:hover {
+    width: 120px;
+    height: 120px;
+    flex-grow: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    flex-shrink: 0;
+    background-image: url('project://database/Assets/WallStud/Visuals/GUI/01_Flat_Theme/Spritesheets/Spritesheet_UI_Flat.png?fileID=993868507&guid=fb2112d6b4054c44c89b9259b0e70747&type=3#Spritesheet_UI_Flat_3');
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    -unity-slice-left: 9;
+    -unity-slice-top: 9;
+    -unity-slice-right: 9;
+    -unity-slice-bottom: 9;
+}

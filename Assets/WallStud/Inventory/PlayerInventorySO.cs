@@ -8,7 +8,7 @@ public class PlayerInventorySO : ScriptableObject {
 
 	public List<Item> items;
 	public int slotsCount => items.Count;
-
+	public event OnInventoryChangedDelegate OnInventoryChanged = delegate { };
 	public PlayerInventorySO(int count) {
 		items = new List<Item>(amountOfSlots);
 	}

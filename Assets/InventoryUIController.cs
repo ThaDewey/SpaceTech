@@ -3,20 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class InventoryUIController : MonoBehaviour
 {
 	[SerializeField] private UIInventory ui;
 	[SerializeField] private InputActionReference reference;
 
-
-	public void Start() {
+	public void OnEnable() {
+		//Debug.Log("OnEnable");
+		EnableAction();
 		ui.InitializeInventoryUI();
 	}
-	public void OnEnable() {
-		Debug.Log("OnEnable");
-		EnableAction();
+
+	public void Start() {
 	}
+
 	public void OnDisable() {
 		DisableAction();
 	}
@@ -27,7 +29,7 @@ public class InventoryUIController : MonoBehaviour
 	}
 
 	public void EnableAction() {
-		Debug.Log("EnableAction");
+		//Debug.Log("EnableAction");
 		reference.action.Enable();
 		reference.action.canceled += Action_Canceled;
 	}

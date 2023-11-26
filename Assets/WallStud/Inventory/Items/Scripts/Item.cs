@@ -22,4 +22,4 @@ public enum InventoryChangeType {
 	Drop
 }
 
-public delegate void OnInventoryChangedDelegate(string[] itemGuid, InventoryChangeType change);
+public delegate void OnInventoryChangedDelegate(Item item, InventoryChangeType change);
