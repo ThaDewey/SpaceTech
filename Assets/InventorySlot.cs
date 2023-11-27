@@ -5,27 +5,27 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
 public class InventorySlot : VisualElement {
 	public Image Icon;
 	public Label label_Amount;
-	
+	public VisualElement root;
 	public string ItemGuid = "";
 	public Item item;
 
 	public InventorySlot(Item _item = null) {
-		Debug.Log("Constructor");
+		//Debug.Log("Constructor | InventorySlot");
 		item = _item;
 		this.name = "InventorySlot";
 
 		AddToClassList("slotContainer");
+		root = parent;
 
 		if (item != null) {
 			UpdateIcon(item.icon);
 			UpdateAmount(item._amount);
 		}
-		RegisterCallback<PointerEnterEvent>((e) => Debug.Log($"{name} ENTER)"),TrickleDown.TrickleDown); ;
-		RegisterCallback<PointerLeaveEvent>((e) => Debug.Log($"{name} EXIT)"));
-		RegisterCallback<PointerDownEvent>((e) => Debug.Log($"{name} Down)"), TrickleDown.TrickleDown);
+
 	}
 
 
@@ -39,15 +39,26 @@ public class InventorySlot : VisualElement {
 	}
 	public void OnPointerDown(PointerDownEvent evt) {
 		Debug.Log($"{name} | OnPointerDown");
-		//Not the left mouse button
-		if (evt.button != 0 || ItemGuid.Equals("")) {
-			return;
-		}
-		//Clear the image
+
+		if (evt.button != 0) 	return;
+		
 		Icon.image = null;
-		//Start the drag
-		UIInventory.StartDrag(evt.position, this);
+
+		InventorySystem.slotManipulator = this.parent.Q<SlotManipulator>();
+
+		if (InventorySystem.slotManipulator == null) {
+			InventorySystem.slotManipulator = new SlotManipulator(item, this,evt);
+			this.parent.Add(InventorySystem.slotManipulator);
+		} else {
+			InventorySystem.slotManipulator.UpdateItem(item, this, evt);
+		}
+
+		InventorySystem.slotManipulator.SetBackgroundImage(item.icon);
+		InventorySystem.slotManipulator.dragAndDropManipulator.PointerDownHandler(evt);
+
+		//UIInventory.StartDrag(evt.position, this);
 	}
+
 
 	public bool hasChild() => (childCount > 0) ? true : false;
 
@@ -60,6 +71,8 @@ public class InventorySlot : VisualElement {
 			SerializedObject itemData = new SerializedObject(_item);
 			this.Bind(itemData);
 		}
+		RegisterCallback<PointerDownEvent>(OnPointerDown);
+
 	}
 
 	public void UpdateIcon(Sprite sprite) {

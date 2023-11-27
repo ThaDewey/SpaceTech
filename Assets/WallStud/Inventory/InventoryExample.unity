@@ -264,8 +264,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpen: 0
-  hideOnStart: 0
+  hideOnStart: 1
   myInventory: {fileID: 11400000, guid: e0320ac97914cb6438cd97b37af440ea, type: 2}
+  mousePos: {fileID: 0}
 --- !u!114 &1115584448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,7 +534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1679345355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,14 +542,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679345354}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: f690c4ff549145c419132567b5adbaa5, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 8a87e7ac5eafbee498e0a0a7196f0069,
+    type: 3}
   m_SortingOrder: 0
 --- !u!4 &1679345356
 Transform:
@@ -572,14 +574,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679345354}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c0edf1c222db3e4dabf185f3a6016f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doc: {fileID: 0}
+  doc: {fileID: 1679345355}
   inventory: []
-  playerInventory: {fileID: 0}
+  playerInventory: {fileID: 11400000, guid: e0320ac97914cb6438cd97b37af440ea, type: 2}
 --- !u!1 &2051807551
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2051807552
 MonoBehaviour:
   m_ObjectHideFlags: 0

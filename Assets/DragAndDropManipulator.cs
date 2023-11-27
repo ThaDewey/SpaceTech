@@ -9,6 +9,7 @@ public class DragAndDropManipulator : PointerManipulator {
 	public DragAndDropManipulator(VisualElement target) {
 		this.target = target;
 		root = target.parent;
+		RegisterCallbacksOnTarget();
 	}
 
 	protected override void RegisterCallbacksOnTarget() {
@@ -37,7 +38,7 @@ public class DragAndDropManipulator : PointerManipulator {
 
 	// This method stores the starting position of target and the pointer,
 	// makes target capture the pointer, and denotes that a drag is now in progress.
-	private void PointerDownHandler(PointerDownEvent evt) {
+	public void PointerDownHandler(PointerDownEvent evt) {
 		targetStartPosition = target.transform.position;
 		pointerStartPosition = evt.position;
 		target.CapturePointer(evt.pointerId);

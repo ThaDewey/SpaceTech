@@ -96,9 +96,9 @@ static class UIToolkitExtensions {
 		if (s != null) SetBackgroundImage(but, s);
 
 		if (className != null) e.AddToClassList(className);
-		
+
 		e.Add(but);
-		
+
 		return but;
 
 	}
@@ -111,9 +111,9 @@ static class UIToolkitExtensions {
 		_l.Add(l);
 		return l;
 	}
-	public static Label CreateLabel(this VisualElement _l, string labelName, int num, string classToAdd =  null) {
+	public static Label CreateLabel(this VisualElement _l, string labelName, int num, string classToAdd = null) {
 		string s = num.ToString();
-		Label l = CreateLabel(_l, labelName, s,classToAdd);
+		Label l = CreateLabel(_l, labelName, s, classToAdd);
 		_l.Add(l);
 		return l;
 	}
@@ -131,6 +131,32 @@ static class UIToolkitExtensions {
 		return e;
 	}
 
+	public static void SetWidthHeight(this VisualElement ve, int value) {
+		StyleLength styleLength = new StyleLength();
+		styleLength = value;
+
+		SetWidth(ve,styleLength);
+		SetHeight(ve,styleLength);
+
+	}
+	public static void SetWidthHeight(this VisualElement ve, int width, int height) {
+		StyleLength _width = new StyleLength();
+		_width = width;
+		StyleLength _height = new StyleLength();
+		_height = height;
+		
+
+		SetWidth(ve, _width);
+		SetHeight(ve, _height);
+
+	}
 
 
+	private static void SetWidth(this VisualElement ve, StyleLength styleLength) {
+		ve.style.width = styleLength;
+	}
+	private static void SetHeight(this VisualElement ve, StyleLength styleLength) {
+
+		ve.style.height = styleLength;
+	}
 }
