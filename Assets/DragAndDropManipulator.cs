@@ -9,6 +9,8 @@ public class DragAndDropManipulator : PointerManipulator {
 	public DragAndDropManipulator(VisualElement target) {
 		this.target = target;
 		root = target.parent;
+		Debug.Log(target);
+		Debug.Log(root);
 		RegisterCallbacksOnTarget();
 	}
 
@@ -71,14 +73,13 @@ public class DragAndDropManipulator : PointerManipulator {
 	// of that slot. Sets the position of target back to its original position
 	// if there is no overlapping slot.
 	private void PointerCaptureOutHandler(PointerCaptureOutEvent evt) {
+			Debug.Log(root);
 		if (enabled) {
-			VisualElement slotsContainer = root.Q<VisualElement>("slots");
-			UQueryBuilder<VisualElement> allSlots =
-				slotsContainer.Query<VisualElement>(className: "slot");
-			UQueryBuilder<VisualElement> overlappingSlots =
-				allSlots.Where(OverlapsTarget);
-			VisualElement closestOverlappingSlot =
-				FindClosestSlot(overlappingSlots);
+			VisualElement slotsContainer = root.Q<VisualElement>("InventoryContent");
+			Debug.Log(slotsContainer);
+			UQueryBuilder<VisualElement> allSlots = slotsContainer.Query<VisualElement>("slot");
+			UQueryBuilder<VisualElement> overlappingSlots = allSlots.Where(OverlapsTarget);
+			VisualElement closestOverlappingSlot = FindClosestSlot(overlappingSlots);
 			Vector3 closestPos = Vector3.zero;
 			if (closestOverlappingSlot != null) {
 				closestPos = RootSpaceOfSlot(closestOverlappingSlot);

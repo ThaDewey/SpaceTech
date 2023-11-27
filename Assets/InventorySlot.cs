@@ -47,14 +47,12 @@ public class InventorySlot : VisualElement {
 		InventorySystem.slotManipulator = this.parent.Q<SlotManipulator>();
 
 		if (InventorySystem.slotManipulator == null) {
-			InventorySystem.slotManipulator = new SlotManipulator(item, this,evt);
-			this.parent.Add(InventorySystem.slotManipulator);
+			new SlotManipulator(this.parent,item, this,evt);
 		} else {
 			InventorySystem.slotManipulator.UpdateItem(item, this, evt);
 		}
 
-		InventorySystem.slotManipulator.SetBackgroundImage(item.icon);
-		InventorySystem.slotManipulator.dragAndDropManipulator.PointerDownHandler(evt);
+
 
 		//UIInventory.StartDrag(evt.position, this);
 	}
