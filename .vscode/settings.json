@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "SpaceTech.sln"
+    "dotnet.defaultSolution": "SpaceTech.sln",
+    "cscurlyformatter.autoTabIndentation": true
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ public class InventoryManager : MonoBehaviour
 	[SerializeField] private ItemEventChannelSO _giveItemEvent = default;
 	[SerializeField] private ItemEventChannelSO _addItemEvent = default;
 	[SerializeField] private ItemEventChannelSO _removeItemEvent = default;
-	
+
 	private void OnEnable()
 	{
 		//_cookRecipeEvent.OnEventRaised += CookRecipeEventRaised;
@@ -25,7 +25,7 @@ public class InventoryManager : MonoBehaviour
 		//_removeItemEvent.OnEventRaised += RemoveItem;
 		//_rewardItemEvent.OnEventRaised += AddItemStack;
 		//_giveItemEvent.OnEventRaised += RemoveItem;
-	}	
+	}
 
 	private void OnDisable()
 	{

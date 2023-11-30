@@ -35,11 +35,7 @@ public class InventoryUIController : MonoBehaviour
 	}
 
 	private void Action_Canceled(InputAction.CallbackContext obj) {
-		Debug.Log("Action_Canceled");
-		Debug.Log($"isOpen: {ui.isOpen}");
-		
-
-
+	//	Debug.Log("Action_Canceled");
 		if (ui.isOpen) {
 			ui.CloseWindow();
 		} else { 

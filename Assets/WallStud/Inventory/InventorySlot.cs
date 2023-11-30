@@ -7,13 +7,22 @@ using UnityEngine.UIElements;
 
 
 public class InventorySlot : VisualElement {
-	public Image Icon;
-	public Label label_Amount;
 	public VisualElement root;
-	public string ItemGuid = "";
+	private Image img_icon;
+	public StyleBackground background;
+	public Label label_Amount;
+
 	public Item item;
+	public string ItemGuid => item.GUID;
 
 	public InventorySlot(Item _item = null) {
+		img_icon = new Image();
+		img_icon.AddToClassList("slotImg");
+		Add(img_icon);
+
+
+		background = this.style.backgroundImage;
+
 		//Debug.Log("Constructor | InventorySlot");
 		item = _item;
 		this.name = "InventorySlot";
@@ -37,31 +46,36 @@ public class InventorySlot : VisualElement {
 		Debug.Log($"{name} | PointerLeaveEvent");
 		//throw new NotImplementedException();
 	}
-	public void OnPointerDown(PointerDownEvent evt) {
-		Debug.Log($"{name} | OnPointerDown");
 
-		if (evt.button != 0) 	return;
-		
-		Icon.image = null;
+	public void OnPointerDown(PointerDownEvent evt) {
+		Debug.Log($"{name} | {item.name}| OnPointerDown");
+
+		if (evt.button != 0) return;
+
 
 		InventorySystem.slotManipulator = this.parent.Q<SlotManipulator>();
 
 		if (InventorySystem.slotManipulator == null) {
-			new SlotManipulator(this.parent,item, this,evt);
-		} else {
-			InventorySystem.slotManipulator.UpdateItem(item, this, evt);
+			new SlotManipulator(this.parent, item, this, evt);
+		}
+		else {
+			InventorySystem.slotManipulator.UpdateManipulator(item, this, evt);
 		}
 
-
-
-		//UIInventory.StartDrag(evt.position, this);
+		PrepareSlotForMove();
 	}
+	public void PrepareSlotForMove() {
+		Debug.Log($"{name} | {item.name}| PrepareSlotForMove");
+		Debug.Log($"{img_icon} PrepareSlotForMove");
+		Debug.Log($"{img_icon.image} PrepareSlotForMove");
+		ClearIcon();
 
+	}
 
 	public bool hasChild() => (childCount > 0) ? true : false;
 
 	public void SetItem(Item _item) {
-		Debug.Log($"SetItem({_item})");
+		//	Debug.Log($"SetItem({_item})");
 		item = _item;
 		if (item != null) {
 			UpdateIcon(item.icon);
@@ -73,15 +87,14 @@ public class InventorySlot : VisualElement {
 
 	}
 
-	public void UpdateIcon(Sprite sprite) {
-		if (Icon != null) return;
-		//Create a new Image element and add it to the root
-		Icon = new Image();
-		Icon.sprite = sprite;
-		Add(Icon);
-		//Add USS style properties to the elements
-		Icon.AddToClassList("slotImg");
+	public void UpdateIcon(Sprite sprite) => img_icon.sprite = sprite;
+
+
+	public void ClearIcon() {
+		img_icon.Hide();
+		label_Amount.Hide();
 	}
+
 	public void UpdateAmount(string amount) {
 		if (label_Amount != null) return;
 
@@ -91,11 +104,8 @@ public class InventorySlot : VisualElement {
 
 	public void HoldItem(Item item) {
 		UpdateIcon(item.icon);
-
-		ItemGuid = item.GUID;
 	}
 	public void DropItem() {
-		ItemGuid = "";
-		Icon.image = null;
+		ClearIcon();
 	}
 }

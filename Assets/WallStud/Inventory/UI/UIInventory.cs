@@ -105,7 +105,7 @@ public class UIInventory : Window {
 
 
 
-
+[System.Obsolete]
 	private void GameController_OnInventoryChanged(Item item, InventoryChangeType change) {
 		//Loop through each item and if it has been picked up, add it to the next empty slot
 		Debug.Log($"GameController_OnInventoryChanged({item},{change})");
@@ -113,8 +113,8 @@ public class UIInventory : Window {
 		if (change == InventoryChangeType.Pickup) {
 			InventorySlot emptySlot = new InventorySlot();
 			emptySlot.item = item;
-			emptySlot.Icon.sprite = item.icon;
-			emptySlot.ItemGuid = item.GUID;
+			//emptySlot.Icon.sprite = item.icon;
+			//emptySlot.ItemGuid = item.GUID;
 
 			if (emptySlot != null) {
 				emptySlot.HoldItem(item);

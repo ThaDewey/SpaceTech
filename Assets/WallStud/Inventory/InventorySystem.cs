@@ -7,5 +7,5 @@ public static class InventorySystem {
 	public static SlotManipulator slotManipulator;
 
 
-
+	
 }

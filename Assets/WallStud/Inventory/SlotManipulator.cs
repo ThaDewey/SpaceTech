@@ -19,65 +19,48 @@ public class SlotManipulator : VisualElement {
 	public InventorySlot slot;
 	private static bool m_IsDragging;
 	protected SlotManipulator target;
-
 	public InventorySlot originalSlot;
 	public Item item;
-	private VisualElement root { get; }
+	private VisualElement root { get; set; }
 	public DragAndDropManipulator dragAndDropManipulator;
 
-	public SlotManipulator(VisualElement parent, Item _item, InventorySlot oldSlot , PointerDownEvent evt) {
-		Debug.Log("SlotManipulator Constructor");
-		item = _item;
-		originalSlot = oldSlot;
-		Debug.Log(_item);
-		this.name = "manipulator";
-		this.SetWidthHeight(128);
-		this.style.position = Position.Absolute;
-		this.Show();
-		this.style.backgroundColor = new StyleColor(Color.red);
-		this.target = this;
-		root = target.parent;
-		this.SetBackgroundImage(item.icon);
-		afterConstructor(parent,evt);
-
-	}
-
-	public void afterConstructor(VisualElement parent,PointerDownEvent evt) {
-		Debug.Log($"{this}");
-		Debug.Log($"{target.parent}");
-		Debug.Log($"{this.parent}");
-
-		parent.Add(this);
-
-		InventorySystem.slotManipulator = this;
-
-		dragAndDropManipulator = new DragAndDropManipulator(this);
-		OnPointerDown(evt);
-		Debug.Log($"{InventorySystem.slotManipulator}");
-		//InventorySystem.slotManipulator.SetBackgroundImage(item.icon);
-	//	InventorySystem.slotManipulator.dragAndDropManipulator.PointerDownHandler(evt);
-	}
-	public void UpdateItem(Item _item, InventorySlot oldSlot, PointerDownEvent evt) {
-		Debug.Log("SlotManipulator UpdateItem");
-		item = _item;
-		originalSlot = oldSlot;
-		Debug.Log(_item);
-		this.name = "manipulator";
-		this.SetWidthHeight(128);
-		this.style.position = Position.Absolute;
-		this.Show();
-		this.style.backgroundColor = new StyleColor(Color.red);
-		this.SetBackgroundImage(item.icon);
-		InventorySystem.slotManipulator = this;
-		this.parent.Add(InventorySystem.slotManipulator);
-		//RegisterCallback<PointerDownEvent>(OnPointerDown);
-		dragAndDropManipulator = new DragAndDropManipulator(this);
-		OnPointerDown(evt);
-	}
-	
-	public void OnPointerDown(PointerDownEvent evt) {
-		if (evt.button != 0) 	return;
+	public SlotManipulator(VisualElement parent, Item _item, InventorySlot oldSlot, PointerDownEvent evt) {
+		Debug.Log($"{_item.icon}");
 		
+		this.name = "manipulator";
+		this.target = this;
+		this.SetWidthHeight(128);
+		this.SetBackgroundImage(_item.icon);
+		this.Show();
+		this.style.backgroundColor = new StyleColor(Color.red);
+		this.style.position = Position.Absolute;
+		
+		InventorySystem.slotManipulator = this;
+		parent.Add(InventorySystem.slotManipulator);
+		dragAndDropManipulator = new DragAndDropManipulator(this);
+		
+		SetFields(_item, oldSlot);
+		OnPointerDown(evt);
+	}
+
+	private void SetFields(Item _item, InventorySlot oldSlot) {
+		item = _item;
+		originalSlot = oldSlot;
+		root = target.parent;
+	}
+
+
+
+	public void UpdateManipulator(Item _item, InventorySlot oldSlot, PointerDownEvent evt) {
+		Debug.Log("UpdateManipulator");
+
+		SetFields(_item, oldSlot);
+		OnPointerDown(evt);
+	}
+
+	public void OnPointerDown(PointerDownEvent evt) {
+		if (evt.button != 0) return;
+
 		Debug.Log($"{name} | OnPointerDown");
 		RegisterCallback<PointerUpEvent>(OnPointerUp);
 
@@ -114,7 +97,8 @@ public class SlotManipulator : VisualElement {
 		if (!m_IsDragging) {
 			Debug.Log($"not dragging");
 			return;
-		} else {
+		}
+		else {
 			Debug.Log($"GO ON");
 		}
 
@@ -132,7 +116,8 @@ public class SlotManipulator : VisualElement {
 		}
 		//Didn't find any (dragged off the window)
 		else {
-			originalSlot.Icon.image = originalSlot.Icon.image;
+			Debug.LogError("HAHA FIX THIS");
+			//originalSlot.Icon.image = originalSlot.Icon.image;
 		}
 		//Clear dragging related visuals and data
 		m_IsDragging = false;
