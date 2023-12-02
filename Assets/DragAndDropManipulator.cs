@@ -9,10 +9,19 @@ public class DragAndDropManipulator : PointerManipulator {
 	public DragAndDropManipulator(VisualElement target) {
 		this.target = target;
 		root = target.parent;
-		Debug.Log(target);
-		Debug.Log(root);
-		RegisterCallbacksOnTarget();
 	}
+
+	public void RegisterCallbacks() => RegisterCallbacksOnTarget();
+	public void UnregisterCallbacks() => UnregisterCallbacksFromTarget();
+
+
+private Vector2 targetStartPosition { get; set; }
+
+	private Vector3 pointerStartPosition { get; set; }
+
+	private bool enabled { get; set; }
+
+	private VisualElement root { get; }
 
 	protected override void RegisterCallbacksOnTarget() {
 		// Register the four callbacks on target.
@@ -30,13 +39,8 @@ public class DragAndDropManipulator : PointerManipulator {
 		target.UnregisterCallback<PointerCaptureOutEvent>(PointerCaptureOutHandler);
 	}
 
-	private Vector2 targetStartPosition { get; set; }
 
-	private Vector3 pointerStartPosition { get; set; }
 
-	private bool enabled { get; set; }
-
-	private VisualElement root { get; }
 
 	// This method stores the starting position of target and the pointer,
 	// makes target capture the pointer, and denotes that a drag is now in progress.
@@ -49,7 +53,7 @@ public class DragAndDropManipulator : PointerManipulator {
 
 	// This method checks whether a drag is in progress and whether target has captured the pointer.
 	// If both are true, calculates a new position for target within the bounds of the window.
-	private void PointerMoveHandler(PointerMoveEvent evt) {
+	public void PointerMoveHandler(PointerMoveEvent evt) {
 		if (enabled && target.HasPointerCapture(evt.pointerId)) {
 			Vector3 pointerDelta = evt.position - pointerStartPosition;
 
@@ -61,7 +65,7 @@ public class DragAndDropManipulator : PointerManipulator {
 
 	// This method checks whether a drag is in progress and whether target has captured the pointer.
 	// If both are true, makes target release the pointer.
-	private void PointerUpHandler(PointerUpEvent evt) {
+	public void PointerUpHandler(PointerUpEvent evt) {
 		if (enabled && target.HasPointerCapture(evt.pointerId)) {
 			target.ReleasePointer(evt.pointerId);
 		}
@@ -72,8 +76,8 @@ public class DragAndDropManipulator : PointerManipulator {
 	// that overlaps target, and sets the position of target so that it rests on top
 	// of that slot. Sets the position of target back to its original position
 	// if there is no overlapping slot.
-	private void PointerCaptureOutHandler(PointerCaptureOutEvent evt) {
-			Debug.Log(root);
+	public void PointerCaptureOutHandler(PointerCaptureOutEvent evt) {
+		Debug.Log(root);
 		if (enabled) {
 			VisualElement slotsContainer = root.Q<VisualElement>("InventoryContent");
 			Debug.Log(slotsContainer);

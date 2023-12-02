@@ -26,7 +26,25 @@ static class UIToolkitExtensions {
 		return button;
 	}
 
-	public static Button GetButton(this VisualElement element, string btn_name) => element.Q<Button>(btn_name);
+	public static Label GetOrCreateLabel<T>(this VisualElement e, string label_name, T _text) {
+		Label l = GetLabel(e, label_name);
+		string msg = _text.ToString();
+
+		if (l == null) { // if there is not label, then  Create one One
+			l = CreateLabel(e, label_name, msg);
+			return l;
+		}
+		else {// retrun what you round
+			UpdateLabel(l, msg);
+			return l;
+		}
+	}
+
+    public static void UpdateLabel(this Label l, string _text) => l.text = _text;
+
+
+
+    public static Button GetButton(this VisualElement element, string btn_name) => element.Q<Button>(btn_name);
 
 	public static Label GetLabel(this VisualElement element, string label) => element.Q<Label>(label);
 
@@ -59,10 +77,8 @@ static class UIToolkitExtensions {
 	/// <param name="e"></param>
 	public static void Conceal(this VisualElement e) => SetDisplay(e, DisplayStyle.None);
 
-
 	public static void SetDisplay(this VisualElement e, DisplayStyle s) => e.style.display = s;
 	public static void Visible(this VisualElement e) => SetVisibility(e, Visibility.Visible);
-
 
 	/// <summary>
 	/// you can see the element, and it other elements will stil react t it
@@ -102,13 +118,12 @@ static class UIToolkitExtensions {
 		return but;
 
 	}
-
-	public static Label CreateLabel(this VisualElement _l, string labelName, string msg, string classToAdd = null) {
+	public static Label CreateLabel(this VisualElement e, string labelName, string msg = null, string classToAdd = null) {
 		Label l = new Label();
 		l.name = labelName;
 		l.text = msg;
 		if (classToAdd != null) l.AddToClassList(classToAdd);
-		_l.Add(l);
+		e.Add(l);
 		return l;
 	}
 	public static Label CreateLabel(this VisualElement _l, string labelName, int num, string classToAdd = null) {
@@ -135,8 +150,8 @@ static class UIToolkitExtensions {
 		StyleLength styleLength = new StyleLength();
 		styleLength = value;
 
-		SetWidth(ve,styleLength);
-		SetHeight(ve,styleLength);
+		SetWidth(ve, styleLength);
+		SetHeight(ve, styleLength);
 
 	}
 	public static void SetWidthHeight(this VisualElement ve, int width, int height) {
@@ -144,7 +159,7 @@ static class UIToolkitExtensions {
 		_width = width;
 		StyleLength _height = new StyleLength();
 		_height = height;
-		
+
 
 		SetWidth(ve, _width);
 		SetHeight(ve, _height);
