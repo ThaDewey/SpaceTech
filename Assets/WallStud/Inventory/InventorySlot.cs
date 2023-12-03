@@ -110,5 +110,6 @@ public class InventorySlot : VisualElement {
 	}
 	public void DropItem() {
 		ClearIcon();
+		//comment
 	}
 }
