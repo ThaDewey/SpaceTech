@@ -77,10 +77,10 @@ private Vector2 targetStartPosition { get; set; }
 	// of that slot. Sets the position of target back to its original position
 	// if there is no overlapping slot.
 	public void PointerCaptureOutHandler(PointerCaptureOutEvent evt) {
-		Debug.Log(root);
+		//Debug.Log("PointerCaptureOutHandler");
 		if (enabled) {
 			VisualElement slotsContainer = root.Q<VisualElement>("InventoryContent");
-			Debug.Log(slotsContainer);
+			//Debug.Log(slotsContainer);
 			UQueryBuilder<VisualElement> allSlots = slotsContainer.Query<VisualElement>("slot");
 			UQueryBuilder<VisualElement> overlappingSlots = allSlots.Where(OverlapsTarget);
 			VisualElement closestOverlappingSlot = FindClosestSlot(overlappingSlots);

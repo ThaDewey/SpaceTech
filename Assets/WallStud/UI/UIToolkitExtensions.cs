@@ -31,10 +31,12 @@ static class UIToolkitExtensions {
 		string msg = _text.ToString();
 
 		if (l == null) { // if there is not label, then  Create one One
+		Debug.Log("We Did not find the label- Make one");
 			l = CreateLabel(e, label_name, msg);
 			return l;
 		}
 		else {// retrun what you round
+		Debug.Log("We found the label- no need to make one");
 			UpdateLabel(l, msg);
 			return l;
 		}

@@ -51,8 +51,8 @@ public class UIInventory : Window {
 	}
 
 	public override void UpdateDisplay() {
-		Debug.Log($"UpdateDisplay");
-		Debug.Log($"inventory.Count: {inventory.Count}");
+		//Debug.Log($"UpdateDisplay");
+		//Debug.Log($"inventory.Count: {inventory.Count}");
 		List<InventorySlot> mySlots = ve_content.Query<InventorySlot>("slot").ToList();
 
 		for (int i = 0; i < inventory.Count; i++) {

@@ -72,13 +72,15 @@ public class InventorySlot : VisualElement {
 	public bool hasChild() => (childCount > 0) ? true : false;
 
 	public void SetItem(Item _item) {
+		Debug.Log($"SetItem({_item})");
 		if (_item == null) return;
-		//	Debug.Log($"SetItem({_item})");
+		Debug.Log($"SetItem() - Item was not Null");
 		item = _item;
 
 
 		UpdateIcon(item.icon);
 		UpdateAmount(item._amount);
+
 		BindItemData(_item);
 		RegisterCallback<PointerDownEvent>(OnPointerDown);
 
@@ -88,6 +90,7 @@ public class InventorySlot : VisualElement {
 		this.Bind(itemData);
 	}
 	private void UpdateIcon(Sprite sprite) {
+		Debug.Log($"Updateicon({sprite})");
 		img_icon.sprite = sprite;
 		img_icon.Show();
 
@@ -97,19 +100,25 @@ public class InventorySlot : VisualElement {
 		label_Amount.Hide();
 	}
 	public void UpdateAmount(string amount) {
-		if (label_Amount != null) return;
-
+		Debug.Log($"UpdateAmount({amount})");
 		label_Amount = this.GetOrCreateLabel(USS_N_ITEM_AMOUNT, amount);
+		label_Amount.Show();
 	}
 	private Label CreateAmountLabel(string amount) {
-		return this.GetOrCreateLabel<string>(USS_N_ITEM_AMOUNT,amount);
+		return this.GetOrCreateLabel<string>(USS_N_ITEM_AMOUNT, amount);
 	}
 	public void HoldItem(Item item) {
 		Debug.Log($"HoldItem({item})");
 		SetItem(item);
 	}
 	public void DropItem() {
-		ClearIcon();
+		Debug.Log($"DropItem()");
 		//comment
+	}
+
+	public void ClearItem(){
+
+		ClearIcon();
+
 	}
 }

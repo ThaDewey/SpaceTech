@@ -45,6 +45,7 @@ public class SlotManipulator : VisualElement {
 
 	private void SetFields(Item _item, InventorySlot oldSlot) {
 		item = _item;
+		this.SetBackgroundImage(item.icon);
 		originalSlot = oldSlot;
 		root = target.parent;
 	}
@@ -70,22 +71,18 @@ public class SlotManipulator : VisualElement {
 		IEnumerable<InventorySlot> _slots = UIInventory.slots.Where(x => x.worldBound.Overlaps(this.worldBound));
 		//Found at least one
 		if (_slots.Count() != 0) {
-				Debug.Log($"_slots.Count()|{_slots.Count()}| !=0: {_slots.Count() != 0} ");
+			Debug.Log($"_slots.Count()|{_slots.Count()}| !=0: {_slots.Count() != 0} ");
 			InventorySlot closestSlot = _slots.OrderBy(x => Vector2.Distance(x.worldBound.position, this.worldBound.position)).First();
 
-			//Set the new inventory slot with the data
+			originalSlot.ClearItem();
+
 			closestSlot.HoldItem(originalSlot.item);
 
-			//Clear the original slot
-			originalSlot.DropItem();
 		}
-		//Didn't find any (dragged off the window)
 		else {
-			//Debug.LogError("HAHA FIX THIS");
-			//originalSlot.Icon.image = originalSlot.Icon.image;
-			originalSlot.HoldItem(originalSlot.item);;
+			originalSlot.HoldItem(originalSlot.item); ;
 		}
-		//Clear dragging related visuals and data
+
 		isDragging = false;
 		originalSlot = null;
 		this.style.visibility = Visibility.Hidden;
