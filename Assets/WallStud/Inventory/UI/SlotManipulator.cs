@@ -1,17 +1,16 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 
+/// <summary>
+/// Creates a ghosted or a visual indicator for moveing items around the inventory stystem.
+/// </summary>
 public class SlotManipulator : VisualElement {
+	
 	public Image Icon;
 	public Label label_Amount;
 
@@ -24,8 +23,10 @@ public class SlotManipulator : VisualElement {
 	private VisualElement root { get; set; }
 	public DragAndDropManipulator dndManipulator;
 
+    public new class UxmlFactory : UxmlFactory<SlotManipulator, UxmlTraits> { }
+	public SlotManipulator(){}
 	public SlotManipulator(VisualElement parent, Item _item, InventorySlot oldSlot, PointerDownEvent evt) {
-		Debug.Log($"{_item.icon}");
+		//Debug.Log($"{_item.icon}");
 
 		this.name = "manipulator";
 		this.target = this;
@@ -50,7 +51,7 @@ public class SlotManipulator : VisualElement {
 		root = target.parent;
 	}
 	public void UpdateManipulator(Item _item, InventorySlot oldSlot, PointerDownEvent evt) {
-		Debug.Log("UpdateManipulator");
+		//Debug.Log("UpdateManipulator");
 
 		this.Show();
 		SetFields(_item, oldSlot);
@@ -60,18 +61,18 @@ public class SlotManipulator : VisualElement {
 	public void OnPointerDown(PointerDownEvent evt) {
 		if (evt.button != 0) return;
 		dndManipulator.PointerDownHandler(evt);
-		Debug.Log($"{name} | OnPointerDown");
+		//Debug.Log($"{name} | OnPointerDown");
 		RegisterCallback<PointerUpEvent>(OnPointerUp);
 
 	}
 
 	private void OnPointerUp(PointerUpEvent evt) {
-		Debug.Log($"OnPointerUp()");
+		//Debug.Log($"OnPointerUp()");
 		//Check to see if they are dropping the ghost icon over any inventory slots.
-		IEnumerable<InventorySlot> _slots = UIInventory.slots.Where(x => x.worldBound.Overlaps(this.worldBound));
+		IEnumerable<InventorySlot> _slots = InventoryContainer._slots.Where(x => x.worldBound.Overlaps(this.worldBound));
 		//Found at least one
 		if (_slots.Count() != 0) {
-			Debug.Log($"_slots.Count()|{_slots.Count()}| !=0: {_slots.Count() != 0} ");
+			////Debug.Log($"_slots.Count()|{_slots.Count()}| !=0: {_slots.Count() != 0} ");
 			InventorySlot closestSlot = _slots.OrderBy(x => Vector2.Distance(x.worldBound.position, this.worldBound.position)).First();
 
 			originalSlot.ClearItem();
@@ -82,7 +83,6 @@ public class SlotManipulator : VisualElement {
 		else {
 			originalSlot.HoldItem(originalSlot.item); ;
 		}
-
 		isDragging = false;
 		originalSlot = null;
 		this.style.visibility = Visibility.Hidden;
@@ -93,7 +93,7 @@ public class SlotManipulator : VisualElement {
 
 	public void SetItem(Item _item) {
 
-		Debug.Log($"SetItem({_item})");
+		//Debug.Log($"SetItem({_item})");
 		item = _item;
 		if (item != null) {
 			UpdateIcon(item.icon);

@@ -31,22 +31,22 @@ static class UIToolkitExtensions {
 		string msg = _text.ToString();
 
 		if (l == null) { // if there is not label, then  Create one One
-		Debug.Log("We Did not find the label- Make one");
+			//Debug.Log("We Did not find the label- Make one");
 			l = CreateLabel(e, label_name, msg);
 			return l;
 		}
 		else {// retrun what you round
-		Debug.Log("We found the label- no need to make one");
+			//Debug.Log("We found the label- no need to make one");
 			UpdateLabel(l, msg);
 			return l;
 		}
 	}
 
-    public static void UpdateLabel(this Label l, string _text) => l.text = _text;
+	public static void UpdateLabel(this Label l, string _text) => l.text = _text;
 
 
 
-    public static Button GetButton(this VisualElement element, string btn_name) => element.Q<Button>(btn_name);
+	public static Button GetButton(this VisualElement element, string btn_name) => element.Q<Button>(btn_name);
 
 	public static Label GetLabel(this VisualElement element, string label) => element.Q<Label>(label);
 

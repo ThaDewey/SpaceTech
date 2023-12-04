@@ -1,33 +1,28 @@
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
-using UnityEditor.UIElements;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-using System.Linq;
-using Unity.VisualScripting;
+
 using UnityEngine.InputSystem;
-using UnityEditor.PackageManager.UI;
+
 
 /// <summary>
 /// Base Class for accessing the UI element uiDocuments  during runtime.
 /// </summary>
 public class UIInventory : Window {
 	[SerializeField] private PlayerInventorySO myInventory;
-	public static List<InventorySlot> slots = new List<InventorySlot>();
-	private List<Item> inventory => myInventory.items;
-	[SerializeField] private InputActionReference mousePos;
+	[SerializeField] private Inventory INVENTORY;
+
+	private List<Item> inventory => INVENTORY.playerInv.items;
 	//Global variable
 	private static VisualElement ghostIcon;
 
-
-	private VisualElement ve_content;
-	private VisualElement ve_inventory;
-	private VisualElement ve_description;
+	public VisualElement ve_inventory;
+	public InventoryContainer inv_container;
+	public VisualElement ve_description;
 
 	protected override void Awake() {
 		base.Awake();
-
 	}
 
 	protected void Start() {
@@ -35,13 +30,13 @@ public class UIInventory : Window {
 	}
 
 
+	public InventoryContainer GetContainer() => root.Q<InventoryContainer>("InventoryContainer");
 
 	protected override void Init() {
 		base.Init();
 		ve_inventory = root.GetElement("Inventory");
-		ve_content = ve_inventory.GetElement("InventoryContent");
 		ve_description = ve_inventory.GetElement("InventoryDescription");
-
+		inv_container = GetContainer();
 	}
 
 	[Button]
@@ -53,7 +48,7 @@ public class UIInventory : Window {
 	public override void UpdateDisplay() {
 		//Debug.Log($"UpdateDisplay");
 		//Debug.Log($"inventory.Count: {inventory.Count}");
-		List<InventorySlot> mySlots = ve_content.Query<InventorySlot>("slot").ToList();
+		List<InventorySlot> mySlots = inv_container.Query<InventorySlot>("slot").ToList();
 
 		for (int i = 0; i < inventory.Count; i++) {
 			InventorySlot slot = mySlots[i];
@@ -67,45 +62,8 @@ public class UIInventory : Window {
 		close.clicked += CloseWindow;
 	}
 
-	public void InitializeInventoryUI() {
-		ve_content.Clear();
 
-
-		for (int i = 0; i < myInventory.amountOfSlots; i++) {
-			InventorySlot slot = CreateSlot();
-
-			slots.Add(slot);
-		}
-	}
-
-
-
-	public InventorySlot CreateSlot() {
-		///Debug.Log("CreateSlot()");
-		InventorySlot slot = new InventorySlot();
-
-		slot.name = "slot";
-		slot.AddToClassList("slot");
-
-		ve_content.Add(slot);
-
-		return slot;
-	}
-
-	private void InitGhostIcon() {
-		//ghostIcon.RegisterCallback<PointerMoveEvent>(OnPointerMove);
-		//ghostIcon.RegisterCallback<PointerUpEvent>(OnPointerUp);
-	}
-
-
-
-
-
-
-
-
-
-[System.Obsolete]
+	[System.Obsolete]
 	private void GameController_OnInventoryChanged(Item item, InventoryChangeType change) {
 		//Loop through each item and if it has been picked up, add it to the next empty slot
 		Debug.Log($"GameController_OnInventoryChanged({item},{change})");

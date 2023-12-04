@@ -7,13 +7,13 @@ using UnityEngine.UIElements;
 
 public class InventoryUIController : MonoBehaviour
 {
+	[SerializeField] private Inventory inv;
 	[SerializeField] private UIInventory ui;
 	[SerializeField] private InputActionReference reference;
 
 	public void OnEnable() {
 		//Debug.Log("OnEnable");
 		EnableAction();
-		ui.InitializeInventoryUI();
 	}
 
 	public void Start() {

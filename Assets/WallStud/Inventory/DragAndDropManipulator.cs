@@ -79,7 +79,7 @@ private Vector2 targetStartPosition { get; set; }
 	public void PointerCaptureOutHandler(PointerCaptureOutEvent evt) {
 		//Debug.Log("PointerCaptureOutHandler");
 		if (enabled) {
-			VisualElement slotsContainer = root.Q<VisualElement>("InventoryContent");
+			VisualElement slotsContainer = root.Q<VisualElement>("InventoryContainer");
 			//Debug.Log(slotsContainer);
 			UQueryBuilder<VisualElement> allSlots = slotsContainer.Query<VisualElement>("slot");
 			UQueryBuilder<VisualElement> overlappingSlots = allSlots.Where(OverlapsTarget);

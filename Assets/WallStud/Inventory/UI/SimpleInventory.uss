@@ -92,3 +92,10 @@
     -unity-slice-right: 9;
     -unity-slice-bottom: 9;
 }
+
+.inventoryContent {
+    flex-grow: 1;
+    flex-direction: row;
+    width: 679px;
+    flex-wrap: wrap;
+}

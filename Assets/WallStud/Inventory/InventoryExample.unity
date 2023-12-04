@@ -242,6 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1115584449}
   - component: {fileID: 1115584448}
+  - component: {fileID: 1115584451}
   - component: {fileID: 1115584447}
   - component: {fileID: 1115584450}
   m_Layer: 0
@@ -266,7 +267,7 @@ MonoBehaviour:
   isOpen: 0
   hideOnStart: 1
   myInventory: {fileID: 11400000, guid: e0320ac97914cb6438cd97b37af440ea, type: 2}
-  mousePos: {fileID: 0}
+  INVENTORY: {fileID: 1115584451}
 --- !u!114 &1115584448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,9 +312,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b31848c01a7f4458aaf70affee7ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inv: {fileID: 1115584451}
   ui: {fileID: 1115584447}
   reference: {fileID: 1934699552562925058, guid: 3cd92ac50f800e14e965edb5d3d3084f,
     type: 3}
+--- !u!114 &1115584451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115584446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7f2dfde0e048e48ae42393a232616c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInv: {fileID: 11400000, guid: e0320ac97914cb6438cd97b37af440ea, type: 2}
+  settings: {fileID: 11400000, guid: 9cbfb44919f2977498601e06177426e5, type: 2}
+  ui: {fileID: 1115584447}
 --- !u!114 &1432914587 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5647886093005629615, guid: e8ab1e12e359c4944babff1b528e3c58,
@@ -580,6 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doc: {fileID: 1679345355}
+  log: 0
   inventory: []
   playerInventory: {fileID: 11400000, guid: e0320ac97914cb6438cd97b37af440ea, type: 2}
 --- !u!1 &2051807551
