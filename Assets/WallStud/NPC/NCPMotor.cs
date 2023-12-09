@@ -1,42 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class NCPMotor : MonoBehaviour {
+public class NCPMotor : Motor {
 
-
-    [SerializeField] private float range = 5;
-
-    private Vector2 target;
-
-
-    public void Move() {
-        var dur = randomDuration(1, 3);
-        var pos = GetPosition();
-        transform.DOMove(pos, dur).OnComplete(DelayThings);
-    }
+    [SerializeField] protected float range;
+    [SerializeField] protected Vector2 waypoint;
+    [SerializeField] private Vector2 target;
+    [SerializeField] private Vector2 currentPos;
+    [SerializeField] private float maxDistance;
+  
 
     private void Awake() {
 
     }
     void Start() {
-        Move();
+
+         target = Random.insideUnitCircle*range;
     }
 
 
-    public void DelayThings() {
-        var delay = randomDelay(1, 3);
-        DOVirtual.DelayedCall(delay, Move);
 
-    }
 
-    private float randomDelay(float min, float max) => Random.Range(min, max);
-    private float randomDuration(float min, float max) => Random.Range(min, max);
-    private Vector2 GetPosition() {
-        return Random.insideUnitCircle * range;
-    }
 
 
 
