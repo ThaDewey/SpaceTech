@@ -5,18 +5,23 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
-public class InventoryUIController : MonoBehaviour
-{
-	[SerializeField] private Inventory inv;
-	[SerializeField] private UIInventory ui;
+public class InventoryUIController : MonoBehaviour {
+	//[SerializeField] private Inventory inv;
+	[SerializeField] private UIInventoryPage inventoryUI;
+	//[SerializeField] private UIInventory ui;
 	[SerializeField] private InputActionReference reference;
+	[SerializeField] private int inventorySize = 8;
+	[SerializeField] private MouseFollower cursor;
+
 
 	public void OnEnable() {
 		//Debug.Log("OnEnable");
 		EnableAction();
+		cursor.Toggle(false);
 	}
 
 	public void Start() {
+		inventoryUI.InitializeInventoryUI(inventorySize);
 	}
 
 	public void OnDisable() {
@@ -35,11 +40,14 @@ public class InventoryUIController : MonoBehaviour
 	}
 
 	private void Action_Canceled(InputAction.CallbackContext obj) {
-	//	Debug.Log("Action_Canceled");
-		if (ui.isOpen) {
-			ui.CloseWindow();
-		} else { 
-			ui.OpenWindow();
+		//	Debug.Log("Action_Canceled");
+		if (inventoryUI.isOpen) {
+			//ui.CloseWindow();
+			inventoryUI.Hide();
+		}
+		else {
+			inventoryUI.Show();
+			//ui.OpenWindow();
 		}
 	}
 }

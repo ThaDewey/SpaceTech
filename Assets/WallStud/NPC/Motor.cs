@@ -5,7 +5,7 @@ public abstract class Motor : MonoBehaviour {
 
     [SerializeField] protected Rigidbody2D rb2d;
     [SerializeField] protected float speed = 500;
-    [SerializeField] protected float range;
+
     [SerializeField] protected float jumpSpeed = 800;
     [SerializeField] protected float maxSpeedVertical = 3;
 

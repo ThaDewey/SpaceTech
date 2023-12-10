@@ -69,7 +69,7 @@ public class PlayerInteract : MonoBehaviour {
 	}
 
 	public virtual void OnCollisionEnter2D(Collision2D collision) {
-		Debug.Log($"OnCollisionEnter2D({collision.collider.name})");
+//		Debug.Log($"OnCollisionEnter2D({collision.collider.name})");
 
 
 		interaction = collision.collider.GetComponent<IInteract>();

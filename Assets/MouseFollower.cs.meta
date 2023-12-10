@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: ec69bce3ba580084d9fed88dcf1a1c74
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - mouse: {fileID: -3891107677768430183, guid: 3cd92ac50f800e14e965edb5d3d3084f,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
