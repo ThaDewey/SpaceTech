@@ -249,12 +249,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1774692716699881097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50a5424dbd3ada947b145a561348d632, type: 3}
+  m_Script: {fileID: 11500000, guid: 14f1dd7d3c615e849b3f6305c1888af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   img_item: {fileID: 5024983101181146425}
   TXT_quantity: {fileID: 8335120720951856731}
   img_Border: {fileID: 440090395986536104}
+  empty: 1
 --- !u!114 &3507605685551067650
 MonoBehaviour:
   m_ObjectHideFlags: 0

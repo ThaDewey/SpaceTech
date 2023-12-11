@@ -8,9 +8,9 @@ using UnityEngine;
 public class InventorySO : ScriptableObject {
 
 
-	public event Action<Dictionary<int, InventoryItem>> OnInventoryUpdated;
+	//public event Action<Dictionary<int, InventoryItem>> OnInventoryUpdated;
 
-	[SerializeField] private List<InventoryItem> inventoryItems;
+	//[SerializeField] private List<InventoryItem> inventoryItems;
 
 	[field: SerializeField] public int Size { get; private set; } = 10;
 
