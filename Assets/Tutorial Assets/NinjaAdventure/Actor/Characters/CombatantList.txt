@@ -1,0 +1,47 @@
+Warrior:
+- BlueNinja
+- BlueSamurai
+- GoldKnight
+- Knight
+- RedSamurai
+- Samurai
+
+Rogue:
+- Boy
+- DarkNinja
+- GrayNinja
+- GreenNinja
+- RedNinja
+- RedNinja2
+
+Ranger:
+- EggBoy
+- EggGirl
+- Greenman
+- Lion
+- MaskedNinja
+- MaskedFrog
+
+Wizard:
+- EskimoNinja
+- Inspector
+- Noble
+- Villager
+- Villager2
+- Villager3
+
+Cleric:
+- Cavegirl
+- Cavegirl2
+- Eskimo
+- OldMan
+- OldMan3
+- Villager4
+
+Monk:
+- Caveman
+- Caveman2
+- Master
+- Monk
+- Monk2
+- OldMan2

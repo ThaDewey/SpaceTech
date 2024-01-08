@@ -6,8 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/WallStud/Inventory/UI/Scenes/Testing.unity
-    guid: 7baa14172a35bdb4b8b6383011e0372c
-  m_configObjects:
-    com.unity.addressableassets: {fileID: 11400000, guid: 5c520310646187f4baa9bb86aa15427e,
-      type: 2}
+    path: Assets/Scenes/Start Menu.unity
+    guid: f13b404b9b660cb44b9cf0f0286cc899
+  - enabled: 1
+    path: Assets/Scenes/Town.unity
+    guid: 901e00732e1932246944a02572632c46
+  - enabled: 1
+    path: Assets/Scenes/Forest.unity
+    guid: 66732c3fcc49aba499720f59107428e7
+  - enabled: 1
+    path: Assets/Scenes/Battle Deep Forest.unity
+    guid: c041c6ed69866ad41967688e9baebc04
+  - enabled: 1
+    path: Assets/Scenes/Battle Forest.unity
+    guid: 86ac21d365ca52b498601d3be8bfa43a
+  - enabled: 1
+    path: Assets/Scenes/Deep Forest.unity
+    guid: 2271f059066a6cc4f9c35510f0e006f9
+  m_configObjects: {}
