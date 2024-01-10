@@ -15593,7 +15593,7 @@ MonoBehaviour:
     path: 
     loadType: 0
     loadAsync: 0
-  startGame: 0
+  startGame: 1
   schematicAsset: {fileID: 0}
   loadStartMenuScene: 0
   callStartMenu: 0

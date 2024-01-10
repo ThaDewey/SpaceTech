@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 619879560, guid: bfb06eec059d3a345ac43927a4389437, type: 3}
   m_Name: EditorData
   m_EditorClassIdentifier: 
-  lastProject: {fileID: 0}
+  lastProject: {fileID: 11400000, guid: 4a617df6e99a9d94eb8eb69c56e0bccf, type: 2}
   lastSaveFormat: 0
   lastEncrypted: 0
   editorHelpLanguageTexts: {fileID: 0}
-  section: 0
-  subSection: 0
-  tabIndex: 0
+  section: 3
+  subSection: 8
+  tabIndex: -1
   scrollY: 0
   foldoutLimit: 
   helpDrag: 220
@@ -35,7 +35,8 @@ MonoBehaviour:
   updatePrefabs: 0
   updateScenes: 0
   sceneUpdate: 
-  schematicAsset: []
+  schematicAsset:
+  - {fileID: 11400000, guid: 94930212dad290e48a7e72fc2c934611, type: 2}
   dialogueImportSettings:
     name: 
     byteData: 
