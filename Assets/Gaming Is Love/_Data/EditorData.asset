@@ -12,33 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 619879560, guid: bfb06eec059d3a345ac43927a4389437, type: 3}
   m_Name: EditorData
   m_EditorClassIdentifier: 
-  lastProject: {fileID: 11400000, guid: 4a617df6e99a9d94eb8eb69c56e0bccf, type: 2}
+  lastProject: {fileID: 11400000, guid: 6bc5a873334b8c94a8dbcdf105713551, type: 2}
   lastSaveFormat: 0
   lastEncrypted: 0
   editorHelpLanguageTexts: {fileID: 0}
-  section: 9
-  subSection: 0
-  tabIndex: -1
-  scrollY: 0
+  section: 3
+  subSection: 6
+  tabIndex: 2
+  scrollY: 725
   foldoutLimit: 
   helpDrag: 220
   subSectionDrag: 250
   tabListDrag: 250
-  formulaDrag: 250
-  schematicDrag: 565
-  jumpListDrag: 251
+  formulaDrag: 307
+  schematicDrag: 400
+  jumpListDrag: 250
   dataSelectionSorting: 0
   typeDataSelectionSorting: 0
-  createBackup: 1
+  createBackup: 0
   updateSchematics: 1
   schematicUpdateFolder: 
   updatePrefabs: 0
   updateScenes: 0
   sceneUpdate: 
   schematicAsset:
-  - {fileID: 11400000, guid: 71dda04c4466ecc4bacccadd38ee8e19, type: 2}
-  - {fileID: 11400000, guid: af09c653c79d9a64094017083405e282, type: 2}
-  - {fileID: 11400000, guid: 94930212dad290e48a7e72fc2c934611, type: 2}
+  - {fileID: 11400000, guid: 1b13e8527be25f4448356bc4db388932, type: 2}
+  - {fileID: 11400000, guid: 369b888a95c3e6e44bacb1af21db4d35, type: 2}
+  - {fileID: 11400000, guid: 9a599350e9a55bb44bc609c53c67a152, type: 2}
+  - {fileID: 11400000, guid: d83b031cc85d1fa4086dd3bddffa5688, type: 2}
+  - {fileID: 11400000, guid: e3481dcdc614bbc499b90d147abdd0eb, type: 2}
+  - {fileID: 11400000, guid: 07e09124063cbc242a37bae029574e2d, type: 2}
+  - {fileID: 11400000, guid: 2e90448c58460bf4aac2c8e9aa05d7ef, type: 2}
+  - {fileID: 11400000, guid: 501acd8c302bb6c4ba4401c2e2bbd735, type: 2}
+  - {fileID: 11400000, guid: ec5db83b3e2b2ad48a684bce55b506f0, type: 2}
+  - {fileID: 11400000, guid: b44780d64940e024d85e932cb26b0d7a, type: 2}
+  - {fileID: 11400000, guid: 1c2a6eb6c73fd3440bee493b0137b3a5, type: 2}
+  - {fileID: 11400000, guid: 3f3de7da784399d459a882c12c7f49fa, type: 2}
+  - {fileID: 11400000, guid: 971d2763a4bf58247a0de1677aa2d470, type: 2}
+  - {fileID: 11400000, guid: 379ffd1f04f2d174dbd7db24dea24cdf, type: 2}
+  - {fileID: 11400000, guid: 080b630a5b94f694f9134bd3e3937312, type: 2}
+  - {fileID: 11400000, guid: 595b86efdb186e24bbc8ccde04841e08, type: 2}
+  - {fileID: 11400000, guid: 7144a6545d079694b8aa61e92e154423, type: 2}
   dialogueImportSettings:
     name: 
     byteData: 
@@ -50,6 +64,9 @@ MonoBehaviour:
   variablesEditor: []
   variablesSchematic:
   - ui
+  - battleScene
+  - showWeapon
+  - counter
   variablesScene: []
   variablesPrefab: []
   foldoutKeys: []

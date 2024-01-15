@@ -1,0 +1,236 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2619767250729684479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5323096503825006889}
+  - component: {fileID: 5294878037100109152}
+  - component: {fileID: 4662128047623303604}
+  - component: {fileID: 1148403377418066889}
+  - component: {fileID: 5805415983136753123}
+  m_Layer: 5
+  m_Name: Shortcut Slot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5323096503825006889
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619767250729684479}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5294878037100109152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619767250729684479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 817421005, guid: 9f4d970ec8b6bb24986fa5de60a66b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4662128047623303604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619767250729684479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 823147387, guid: 705d5bc18adacb74c8281c7d1ca01d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentProvider: {fileID: 5294878037100109152}
+  serialize_setting:
+    name: settings
+    byteData: 
+    xmlData: '<xmldata>
+
+      <_bool emptyOverride="False" assignedOverride="False"
+      />
+
+      <_string>
+
+      <emptyKey><![CDATA[]]></emptyKey>
+
+      <assignedKey><![CDATA[]]></assignedKey>
+
+      </_string>
+
+      <slotInput
+      innerAssign="1" channel="0" clickUseType="1" clickCount="1" >
+
+      <_float
+      removeVolume="1" />
+
+      <_bool enableTooltip="False" enableDrag="False"
+      noOuterAssign="False" removeOnWorldDrop="False" useGroupTarget="False" useIndividualTarget="False"
+      useAutoTarget="False" autoTargetOnly="False" useClickUse="True" assignSlotSwap="False"
+      ownDragNotification="False" />
+
+      </slotInput>
+
+      <emptyState>
+
+      <_bool
+      useColor="True" useHighlightedColor="True" />
+
+      <_floatarrays>
+
+      <color
+      1 1 1 1 />
+
+      <highlightedColor 1 0.9536707 0 1 />
+
+      </_floatarrays>
+
+      </emptyState>
+
+      <activeState>
+
+      <_bool
+      useColor="True" useHighlightedColor="True" />
+
+      <_floatarrays>
+
+      <color
+      0.1513672 1 0 1 />
+
+      <highlightedColor 1 0.8073908 0 1 />
+
+      </_floatarrays>
+
+      </activeState>
+
+      <useableState>
+
+      <_bool
+      useColor="True" useHighlightedColor="True" />
+
+      <_floatarrays>
+
+      <color
+      1 1 1 1 />
+
+      <highlightedColor 1 0.7734208 0 1 />
+
+      </_floatarrays>
+
+      </useableState>
+
+      <inactiveState>
+
+      <_bool
+      useColor="True" useHighlightedColor="True" />
+
+      <_floatarrays>
+
+      <color
+      1 0 0 1 />
+
+      <highlightedColor 1 0.9646237 0 1 />
+
+      </_floatarrays>
+
+      </inactiveState>
+
+      <passiveAbilityEnabledState>
+
+      <_bool
+      useColor="False" useHighlightedColor="False" />
+
+      <_floatarrays>
+
+      <color
+      1 1 1 1 />
+
+      <highlightedColor 1 1 1 1 />
+
+      </_floatarrays>
+
+      </passiveAbilityEnabledState>
+
+      <passiveAbilityDisabledState>
+
+      <_bool
+      useColor="False" useHighlightedColor="False" />
+
+      <_floatarrays>
+
+      <color
+      1 1 1 1 />
+
+      <highlightedColor 1 1 1 1 />
+
+      </_floatarrays>
+
+      </passiveAbilityDisabledState>
+
+      </xmldata>
+
+'
+    lookUp:
+      assets: []
+    encrypted: 0
+    stringData: 
+--- !u!222 &1148403377418066889
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619767250729684479}
+  m_CullTransparentMesh: 1
+--- !u!114 &5805415983136753123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619767250729684479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 3407514cb62bea1418030377a6cc41a5, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1

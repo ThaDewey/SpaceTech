@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useAssetBundle: 0
-  project: {fileID: 11400000, guid: 4a617df6e99a9d94eb8eb69c56e0bccf, type: 2}
+  project: {fileID: 11400000, guid: 6bc5a873334b8c94a8dbcdf105713551, type: 2}
   assetBundle:
     assetName: 
     assetBundleName: 
@@ -537,7 +537,7 @@ MonoBehaviour:
     loadType: 0
     loadAsync: 0
   startGame: 0
-  schematicAsset: {fileID: 0}
+  schematicAsset: {fileID: 11400000, guid: 94930212dad290e48a7e72fc2c934611, type: 2}
   loadStartMenuScene: 0
   callStartMenu: 0
   callAfter: 0
