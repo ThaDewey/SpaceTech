@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1405506007, guid: bfb06eec059d3a345ac43927a4389437, type: 3}
-  m_Name: 4 - Screen Fader 1
+  m_Name: 4 - Screen Fader
   m_EditorClassIdentifier: 
   data:
     name: settings
